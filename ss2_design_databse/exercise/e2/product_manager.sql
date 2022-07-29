@@ -20,7 +20,7 @@
  create table orderDetail(
 	oID int,
     pID int,
-    OdQTY varchar(50),
+    OdQTY int,
     foreign key(oID) references `order`(oID),
     foreign key(pID) references product(pID)
  );
