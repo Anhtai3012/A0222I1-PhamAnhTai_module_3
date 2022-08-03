@@ -27,13 +27,13 @@ group by kh.ho_ten;
 -- khách hàng nào chưa từng đặt phòng cũng phải hiển thị ra).
 
 
-select ho_ten, ifnull(sum(so_luong * gia) + tmp.tong_chi_phi_thue, 0) tong_tien  from khach_hang kh
+select ho_ten, ifnull(sum(so_luong * gia) + tmp.tong_chi_phi_thue, 0) as tong_tien  from khach_hang kh
 left join hop_dong hd using (ma_khach_hang)
 left join hop_dong_chi_tiet using (ma_hop_dong)
 left join dich_vu_di_kem using (ma_dich_vu_di_kem)
 left join 
 (
-select ma_khach_hang, sum(chi_phi_thue) tong_chi_phi_thue from khach_hang kh1 join hop_dong using (ma_khach_hang) join dich_vu using (ma_dich_vu) group by hop_dong.ma_khach_hang
+select ma_khach_hang, sum(chi_phi_thue) as tong_chi_phi_thue from khach_hang kh1 join hop_dong using (ma_khach_hang) join dich_vu using (ma_dich_vu) group by hop_dong.ma_khach_hang
 ) tmp using (ma_khach_hang)
 group by hd.ma_khach_hang;
 
@@ -69,20 +69,20 @@ SELECT
     ngay_lam_hop_dong,
     ngay_ket_thuc,
     tien_dat_coc,
-    SUM(so_luong)
+    ifnull((sum(so_luong)),0)
 FROM hop_dong
-        LEFT JOIN hop_dong_chi_tiet using(ma_hop_dong) 
-        LEFT JOIN dich_vu_di_kem using(ma_dich_vu_di_kem) 
+        LEFT join hop_dong_chi_tiet hdct using(ma_hop_dong) 
+        LEFT join dich_vu_di_kem using(ma_dich_vu_di_kem) 
 GROUP BY hop_dong.ma_hop_dong
 ORDER BY hop_dong.ma_hop_dong;
 -- 11
 SELECT 
     dich_vu_di_kem.ma_dich_vu_di_kem,ten_dich_vu_di_kem
 FROM dich_vu_di_kem
-         JOIN hop_dong_chi_tiet using(ma_dich_vu_di_kem)
-         JOIN hop_dong using(ma_hop_dong)
-        JOIN khach_hang using(ma_khach_hang)
-         JOIN loai_khach using(ma_loai_khach)
+         join hop_dong_chi_tiet using(ma_dich_vu_di_kem)
+         join hop_dong using(ma_hop_dong)
+        join khach_hang using(ma_khach_hang)
+         join loai_khach using(ma_loai_khach)
         where ten_loai_khach = 'Diamond'
         AND dia_chi REGEXP 'Vinh|Quảng Ngãi';
 -- 12
@@ -93,17 +93,47 @@ SELECT
     khach_hang.so_dien_thoai,
     ten_dich_vu,
     tien_dat_coc,
-    SUM(so_luong)
+    ifnull(sum(so_luong),0) as so_luong
 FROM
     hop_dong
-         JOIN hop_dong_chi_tiet using(ma_hop_dong)
-        JOIN khach_hang using(ma_khach_hang)
-		JOIN  nhan_vien using(ma_nhan_vien)
-		JOIN dich_vu using(ma_dich_vu)
-       where  ((MONTH(ngay_lam_hop_dong) BETWEEN 10 AND 12)
-        AND (YEAR(ngay_lam_hop_dong) = 2020))
+		left join hop_dong_chi_tiet using(ma_hop_dong)
+        join khach_hang using(ma_khach_hang)
+		 join  nhan_vien using(ma_nhan_vien)
+		 join dich_vu using(ma_dich_vu)
+       where  (MONTH(ngay_lam_hop_dong) BETWEEN 10 AND 12
+        AND YEAR(ngay_lam_hop_dong) = 2020)
         AND ngay_lam_hop_dong NOT IN ((MONTH(ngay_lam_hop_dong) BETWEEN 1 AND 6)
-        AND (YEAR(ngay_lam_hop_dong) = 2021));
+        AND YEAR(ngay_lam_hop_dong) = 2021)
+	group by ma_hop_dong;
+-- 13 
+select ten_dich_vu_di_kem,gia,sum(so_luong) as so_lan from dich_vu_di_kem
+join hop_dong_chi_tiet hdct using(ma_dich_vu_di_kem)
+group by hdct.ma_dich_vu_di_kem
+having so_lan >=all(select sum(so_luong) from hop_dong_chi_tiet
+	group by ma_dich_vu_di_kem
+    order by sum(so_luong) 
+);
+-- 14
+select ma_hop_dong,ten_loai_dich_vu,ten_dich_vu_di_kem,count(ma_dich_vu_di_kem) as so_lan
+from 
+	hop_dong_chi_tiet
+    join dich_vu_di_kem using(ma_dich_vu_di_kem)
+    join hop_dong using(ma_hop_dong)
+    join dich_vu using(ma_dich_vu)
+    join loai_dich_vu using(ma_loai_dich_vu)
+    group by ma_dich_vu_di_kem
+    having so_lan=1;
+-- 15 
+select ma_nhan_vien,ho_ten,ten_trinh_do,ten_bo_phan,so_dien_thoai,dia_chi
+,count(ma_nhan_vien) from nhan_vien
+join trinh_do using(ma_trinh_do)
+join bo_phan using(ma_bo_phan)
+join hop_dong hd using(ma_nhan_vien)
+where (year(hd.ngay_lam_hop_dong) between 2020 and 2021)
+group by ma_nhan_vien
+having count(ma_nhan_vien) <=3 ;
+-- 16 
+
 -- 17.	Cập nhật thông tin những khách hàng có ten_loai_khach từ Platinum lên Diamond, chỉ cập nhật những khách hàng đã từng đặt phòng với Tổng Tiền thanh toán trong năm 2021 là lớn hơn 10.000.000 VNĐ.
 
 update khach_hang 
