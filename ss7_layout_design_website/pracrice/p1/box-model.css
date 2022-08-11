@@ -1,0 +1,13 @@
+.div-total{
+    border: solid 20px;
+    border-bottom-color: blue;
+    border-top-color: green;
+    border-left-color: purple;
+    border-right-color: aqua;
+    padding: 10px;
+}
+p{
+    padding: 5px;
+    border: dashed;
+    border-radius: 5px;
+}
