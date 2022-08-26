@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="e3e19f4f-9852-4365-85a4-edd12fee63ca" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../../ss11_mvc/demo_ss11/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../ss11_mvc/demo_ss11/.idea/demo_ss11.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../ss11_mvc/demo_ss11/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../ss11_mvc/demo_ss11/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../ss11_mvc/demo_ss11/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../ss11_mvc/exercise/e1/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../ss11_mvc/exercise/e1/src/main/java/Controller/ServletProduct.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../ss11_mvc/exercise/e1/src/main/java/Model/Product.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../ss11_mvc/exercise/e1/src/main/java/Repository/IProductRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../ss11_mvc/exercise/e1/src/main/java/Repository/impl/ProductRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../ss11_mvc/exercise/e1/src/main/java/Service/IProductService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../ss11_mvc/exercise/e1/src/main/java/Service/impl/ProductService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../ss11_mvc/exercise/e1/src/main/webapp/view/create.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../ss11_mvc/exercise/e1/src/main/webapp/view/edit.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../ss11_mvc/exercise/e1/src/main/webapp/view/error.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../ss11_mvc/exercise/e1/src/main/webapp/view/list.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../ss11_mvc/exercise/e2/mvc/.idea/mvc.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../ss11_mvc/exercise/e2/mvc/src/main/java/utils/validate.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../ss11_mvc/practice/p1/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../ss11_mvc/practice/p1/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../ss11_mvc/practice/p1/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../ss11_mvc/practice/p1/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../ss11_mvc/practice/p1/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../ss11_mvc/practice/p1/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../ss11_mvc/practice/p1/src/main/java/Service/ICustomerService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../ss11_mvc/practice/p1/src/main/java/Service/Impl/CustomerServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../ss11_mvc/practice/p1/src/main/java/controller/CustomerServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../ss11_mvc/practice/p1/src/main/java/model/Customer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../ss11_mvc/practice/p1/src/main/webapp/view/create.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../ss11_mvc/practice/p1/src/main/webapp/view/delete.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../ss11_mvc/practice/p1/src/main/webapp/view/edit.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../ss11_mvc/practice/p1/src/main/webapp/view/error-404.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../ss11_mvc/practice/p1/src/main/webapp/view/listCustomers.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../ss11_mvc/practice/p1/src/main/webapp/view/seeDetails.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../ss12_jdbc/practice/p1/src/main/java/controller/Servlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../ss12_jdbc/practice/p1/src/main/java/model/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../ss12_jdbc/practice/p1/src/main/java/repository/IUserDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../ss12_jdbc/practice/p1/src/main/java/repository/impl/UserDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../ss12_jdbc/practice/p1/src/main/webapp/view/create.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../ss12_jdbc/practice/p1/src/main/webapp/view/edit.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../ss12_jdbc/practice/p1/src/main/webapp/view/list.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../casestudy_furama_sql/query_furama.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../../casestudy_furama_sql/query_furama.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss10_jsp_and_jstl/exercise/e2/.gradle/6.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss10_jsp_and_jstl/exercise/e2/.gradle/6.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss10_jsp_and_jstl/exercise/e2/.gradle/6.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss10_jsp_and_jstl/exercise/e2/.gradle/6.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss10_jsp_and_jstl/exercise/e2/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss10_jsp_and_jstl/exercise/e2/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectId" id="2DqacaeaMN2p9FrZ5g1Ev8hSpaY" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e3e19f4f-9852-4365-85a4-edd12fee63ca" name="Default Changelist" comment="" />
+      <created>1661429148856</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1661429148856</updated>
+      <workItem from="1661429154654" duration="26000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+</project>

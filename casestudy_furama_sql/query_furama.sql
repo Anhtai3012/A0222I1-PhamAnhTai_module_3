@@ -18,6 +18,13 @@ join hop_dong hd on hd.ma_khach_hang=kh.ma_khach_hang
 join loai_khach lk on lk.ma_loai_khach=kh.ma_loai_khach
 where lk.ten_loai_khach='Diamond'
 group by kh.ho_ten;
+
+select hd.ma_khach_hang,ho_ten,count(hd.ma_khach_hang) as so_lan from hop_dong hd
+	join khach_hang using(ma_khach_hang)
+    join loai_khach using(ma_loai_khach)
+    where ten_loai_khach regexp 'Diamond'
+    group by hd.ma_khach_hang
+    order by so_lan ;
 -- 5. Hiển thị ma_khach_hang, ho_ten, ten_loai_khach, ma_hop_dong,
 -- ten_dich_vu, ngay_lam_hop_dong, ngay_ket_thuc, tong_tien (Với
 -- tổng tiền được tính theo công thức như sau: Chi Phí Thuê + Số Lượng *
@@ -25,6 +32,14 @@ group by kh.ho_ten;
 -- hop_dong_chi_tiet) cho tất cả các khách hàng đã từng đặt phòng. (những
 -- khách hàng nào chưa từng đặt phòng cũng phải hiển thị ra).
 
+select kh.ma_khach_hang,ho_ten,ten_loai_khach,ma_hop_dong,ten_dich_vu,ngay_lam_hop_dong,ngay_ket_thuc
+	,so_luong,gia,chi_phi_thue
+    from hop_dong
+    join dich_vu using(ma_dich_vu)
+    right join khach_hang kh using(ma_khach_hang)
+    join loai_khach using(ma_loai_khach)
+    join hop_dong_chi_tiet using(ma_hop_dong)
+    join dich_vu_di_kem using(ma_dich_vu_di_kem);
 
 select ho_ten, ifnull(sum(so_luong * gia) + tmp.tong_chi_phi_thue, 0) as tong_tien  from khach_hang kh
 left join hop_dong hd using (ma_khach_hang)
@@ -43,6 +58,13 @@ where not exists(select ngay_lam_hop_dong from hop_dong
 -- join hop_dong using (ma_dich_vu) 
 where hop_dong.ma_dich_vu=dich_vu.ma_dich_vu and ngay_lam_hop_dong between '2021-01-01' and '2021-03-31'
  );
+ 
+ select ma_dich_vu,ten_dich_vu,dien_tich,chi_phi_thue,ten_loai_dich_vu from dich_vu
+join loai_dich_vu using(ma_loai_dich_vu)
+where ma_loai_dich_vu not in (select ma_loai_dich_vu from dich_vu
+join hop_dong using(ma_dich_vu) 
+where ngay_lam_hop_dong between '2021-01-01' and '2021-03-31' );
+
  -- 7.	Hiển thị thông tin ma_dich_vu, ten_dich_vu, dien_tich, so_nguoi_toi_da, chi_phi_thue, ten_loai_dich_vu của tất cả các loại dịch vụ đã từng được khách hàng đặt phòng trong năm 2020 nhưng chưa từng được khách hàng đặt phòng trong năm 2021.
 select ma_dich_vu,ten_dich_vu,dien_tich,so_nguoi_toi_da,chi_phi_thue, ldv.ten_loai_dich_vu from dich_vu
 join loai_dich_vu ldv using (ma_loai_dich_vu)
@@ -51,6 +73,18 @@ where exists(
 where dich_vu.ma_dich_vu=hop_dong.ma_dich_vu and year(ngay_lam_hop_dong) = 2020 
 and not exists(select*from hop_dong 
 where dich_vu.ma_dich_vu=hop_dong.ma_dich_vu and year(ngay_lam_hop_dong)=2021));
+
+select ma_dich_vu,ten_dich_vu,dien_tich,so_nguoi_toi_da,chi_phi_thue,ten_loai_dich_vu 
+	from dich_vu
+    join loai_dich_vu using(ma_loai_dich_vu)
+    where ma_dich_vu in (
+    select temp.ma_dich_vu from 
+    (select ma_dich_vu,ma_khach_hang,ngay_lam_hop_dong from dich_vu
+    join hop_dong using(ma_dich_vu)
+    where year(ngay_lam_hop_dong) =2020
+    group by ma_dich_vu
+    having year(ngay_lam_hop_dong) <> 2021) temp );
+
 -- 8
 select ho_ten from khach_hang
 group by ho_ten
@@ -160,11 +194,7 @@ select ma_khach_hang, sum(chi_phi_thue) tong_chi_phi_thue from khach_hang kh1 jo
 where year(ngay_lam_hop_dong) = 2021 and ten_loai_khach ='Platinium'
 group by hd.ma_khach_hang
 having tong_tien > 10000000
-
 ) t
-
-
-
 );
 
  select ma_khach_hang, ho_ten, ifnull(sum(so_luong * gia) + tmp.tong_chi_phi_thue, 0) tong_tien   from khach_hang kh
@@ -196,13 +226,13 @@ set gia= gia*2
 where ma_dich_vu_di_kem in (
 select tmp.ma_dich_vu_di_kem from (
 select 
-hdct.ma_dich_vu_di_kem,sum(so_luong) as so_luong 
+hdct.ma_dich_vu_di_kem,sum(hdct.so_luong) as so_lan 
 	from hop_dong_chi_tiet hdct
-join dich_vu_di_kem using(ma_dich_vu_di_kem)
+join dich_vu_di_kem dvdk using(ma_dich_vu_di_kem)
 join hop_dong using(ma_hop_dong)
-where year(ngay_lam_hop_dong) = 2020
+ where year(ngay_lam_hop_dong) = 2020
 group by hdct.ma_dich_vu_di_kem
-having so_luong > 10)tmp
+having so_lan > 1 ) tmp
  );
 -- 20
 select ma_nhan_vien,ho_ten from nhan_vien
@@ -216,3 +246,28 @@ group by ngay_lam_hop_dong
 having count(ngay_lam_hop_dong) >=1 ;
 select*from v_nhan_vien;
 -- 22
+update v_nhan_vien set dia_chi='dia_chi';
+-- 23
+
+delimiter //
+create procedure sp_xoa_khach_hang(in c_ma_khach_hang int)
+begin 
+delete from khach_hang 
+where c_ma_khach_hang=ma_khach_hang;
+end //
+delimiter ;
+call sp_xoa_khach_hang(7);
+-- 24 
+-- 25
+delimiter // 
+create trigger tr_xoa_hop_dong
+after delete on hop_dong
+for each row
+ begin
+ set @c= (select count(*) from hop_dong);
+signal SQLSTATE '01000' set MESSAGE_TEXT = @c;
+END
+// DELIMITER ;
+
+delete from hop_dong where ma_hop_dong =1;
+ 
