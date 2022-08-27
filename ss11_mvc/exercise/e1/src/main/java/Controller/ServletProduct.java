@@ -25,12 +25,26 @@ public class ServletProduct extends HttpServlet {
             case "create":
                 createProduct(request,response);
                 break;
-            case "delete":
+            case "search":
+                SearchName(request,response);
                 break;
             case "edit":
                 updateProduct(request,response);
                 break;
         }
+    }
+
+    private void SearchName(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    String name = request.getParameter("search");
+    List<Product> products = this.productService.searchName(name);
+        RequestDispatcher requestDispatcher;
+        if (products == null){
+            requestDispatcher = request.getRequestDispatcher("view/error.jsp");}
+        else {
+            requestDispatcher = request.getRequestDispatcher("view/list.jsp");
+            request.setAttribute("products",products);
+        }
+        requestDispatcher.forward(request,response);
     }
 
     private void updateProduct(HttpServletRequest request, HttpServletResponse response) throws IOException {

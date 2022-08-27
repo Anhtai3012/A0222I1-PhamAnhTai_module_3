@@ -13,6 +13,11 @@
 </head>
 <body>
 <h1>List Product</h1>
+<form action="/products?action=search" method="post">
+    <label for="">SearchName:</label>
+    <input type='search' size="45" name="search">
+    <button type="submit">Submit</button>
+</form>
 <p><a href="/products?action=create">Create new Product</a></p>
 <table border="1" style="border-radius: 10px">
     <tr>

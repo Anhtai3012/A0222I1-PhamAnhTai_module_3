@@ -54,6 +54,18 @@ public class ProductRepository implements IProductRepository {
     }
 
     @Override
+    public List<Product> searchName(String name) {
+        List<Product> result = new ArrayList<>();
+        for (Product p:findAll()) {
+            if (p.getName().contains(name)){
+                  result.add(p);
+                  return result;
+            }
+        }
+        return null;
+    }
+
+    @Override
     public void remove(int id) {
 //        productList.removeIf(e -> e.getId() == id);
 
