@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>khai bao su dung bien</title>
+</head>
+<body>
+
+<p> nhap chieu dai hinh chu nhat <input name="wight" id="input1" type="number"></p>
+<p> nhap chieu rong hinh chu nhat <input name="height" id="input2" type="number"></p>
+<p> chu vi hinh chu nhat la <span id="output"></span></p>
+<hr>
+
+<script>
+    let a = 10;
+    let b = 20.5;
+    let c = (20>10).valueOf();
+    let d = "Da Nang";
+    let input1 = document.getElementById("input1");
+    let input2 = document.getElementById("input2");
+    let input3 = prompt("Nhap ban kinh hinh tron ","0");
+    let PC = parseInt(input3)* 3.14 * 2;
+    let AC = parseInt(input3)* parseInt(input3) * 3.14;
+
+    document.write(a + "<br>");
+    document.write(b + "<br>");
+    document.write(c + "<br>");
+    document.write(d + "<hr>");
+    input2.addEventListener("keyup",outputFunction);
+    document.write("chu vi hinh tron " + PC +"<br>");
+    document.write("dien tich hinh tron " + AC);
+
+    function outputFunction() {
+        let output = (parseInt(input1.value)+parseInt(input2.value))*2;
+        document.getElementById("output").innerHTML= output;
+    }
+
+</script>
+</body>
+</html>

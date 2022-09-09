@@ -1,0 +1,34 @@
+
+
+select {
+    text-align: center;
+}
+
+h1 {
+    text-align: center;
+    color: orangered;
+}
+
+.imgStory {
+    width: 300px;
+    height: 500px;
+}
+.container{
+    width: 90%;
+    margin: auto;
+}
+td{
+    text-align: center;
+    color: blue;
+    padding-left: 20px;
+}
+.header{
+    width: 100%;
+    height: 100px;
+    text-align: center;
+}
+.menu-header{
+    position: relative;
+    width: 80%;
+    height: 100px;
+}

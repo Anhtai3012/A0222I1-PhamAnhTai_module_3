@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p> Array input's <span id="list-array"></span></p>
+    <button onclick="checkAndDeleteX()">Find X and Delete</button>
+    <p> Array after function <span id="new-array"></span></p>
+
+    <button onclick="sortArray()">Sort</button>
+    <p> Array after sort <span id="sort-array"></span></p>
+
+    <script>
+        let array = new Array();
+        const MAX = 10;
+
+        for (i = 0; i < 10; i++) {
+            array[i] = prompt("input element");
+            document.getElementById("list-array").innerHTML += array[i] + ", ";
+        }
+        console.log(array);
+
+        function checkAndDeleteX() {
+            let checkX = prompt("X is ");
+            let starNumb = array.indexOf(checkX);
+            array.splice(starNumb, 1);
+            array.push(0);
+            console.log(array);
+            document.getElementById("new-array").innerHTML = array;
+        }
+
+        function sortArray() {
+            array.sort((a, b) => b - a);
+            console.log(array);
+            document.getElementById("sort-array").innerHTML = array;
+
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>Your Text: <span id="input"></span></div>
+    <div>Text Converter: <span id="output"></span></div>
+    <div>Long length in text: <span id="max"></span></div>
+    <script>
+      let text = prompt("Your text you want to change: ");
+      // let check = text
+      //   .split(" ")
+      //   .filter((x) => x.trim() != "")
+      //   .map((x) => x.charAt(0).toUpperCase() + x.slice(1).toLowerCase())
+      //   .join(" ");
+
+      let check = text.split(" ");
+      console.log(check)
+      let str = "";
+      let max = [];
+
+      for (value of check) {
+        if (value == "") {
+          continue;
+        }
+        console.log(value.length);
+        if (value.length > max.length) {
+          max =
+            value.charAt(0).toUpperCase() + value.substring(1).toLowerCase();
+        }
+        str += `${
+          value.charAt(0).toUpperCase() + value.substring(1).toLowerCase()
+        } `;
+      }
+
+      document.getElementById("input").innerHTML = text;
+      document.getElementById("output").innerHTML = str;
+      document.getElementById("max").innerHTML = max;
+    </script>
+  </body>
+</html>

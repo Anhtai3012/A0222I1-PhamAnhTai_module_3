@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <title>Arrays in Thymeleaf</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<form action="/calculator" method="post">
+    <h1>USD</h1>
+    <input type="number" name="usd" th:value="${usd}">
+    <h1>Rate VND</h1>
+    <input type="number" name="vnd" th:value="${vnd}">
+    <button type="submit">Exchange</button>
+</form>
+<div th:if="${result != null}">
+    <h1>Total <span th:text="${result}"></span></h1>
+</div>
+</body>
+</html>

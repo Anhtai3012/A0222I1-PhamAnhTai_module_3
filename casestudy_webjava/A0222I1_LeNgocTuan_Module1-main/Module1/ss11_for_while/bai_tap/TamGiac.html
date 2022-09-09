@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Triangle</title>
+</head>
+
+<body>
+    <div id="triangle1"></div>
+    <hr>
+    <div id="triangle2"></div>
+    <hr>
+    <div id="triangle3"></div>
+    <hr>
+    <div id="triangle4"></div>
+    <script>
+        function triangle1() {
+            let str = "";
+            for (let i = 1; i <= 5; i++) {
+                for (let j = 1; j <= i; j++) {
+                    str += " * ";
+                }
+                str += "<br>";
+            }
+            return str;
+            console.log(str);
+        }
+
+        function triangle2() {
+            let str = "";
+            for (let i = 5; i >= 1; i--) {
+                for (let j = i; j >= 1; j--) {
+                    str += " * ";
+                }
+                str += "<br>";
+            }
+            return str;
+            console.log(str);
+        }
+
+        function triangle3() {
+            let str = "";
+            for (i = 1; i <= 5; i++) {
+                for (j = 5; j >= 1; j--) {
+                    str += j > i ? "  &nbsp&nbsp  " : " * ";
+                }
+                str += "<br>";
+            }
+            return str;
+            console.log(str);
+        }
+        
+        function triangle4() {
+            let str = "";
+            for (i = 5; i >= 1; i--) {
+                for (j = 5; j >= 1; j--) {
+                    str += j > i ? " &nbsp&nbsp " : " * ";
+                }
+                str += "<br>";
+            }
+            return str;
+            console.log(str);
+        }
+
+        document.getElementById("triangle1").innerHTML = triangle1();
+        document.getElementById("triangle2").innerHTML = triangle2();
+        document.getElementById("triangle3").innerHTML = triangle3();
+        document.getElementById("triangle4").innerHTML = triangle4();
+
+    </script>
+</body>
+
+</html>

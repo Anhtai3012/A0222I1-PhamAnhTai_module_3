@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Caculator </title>
+</head>
+
+<body>
+    <h1>Caculator</h1>
+    <p><span><input name="a" type="number" id="input1"></span><input name="b" id="input2" type="number"></p>
+        <button id="add" value="+">Addtion(+)</button> <button id="sub" value="-">Subtraction(-)</button>
+        <button id="multi" value="*">Multiplication(X)</button><button id="div" value="/">Division(/)</button>
+        <p>Result Division: <span id="output"></span></p>
+</body>
+<script>
+    var add = document.getElementById("add");
+    var sub = document.getElementById("sub");
+    var multi = document.getElementById("multi");
+    var div = document.getElementById("div");
+
+    add.addEventListener("click", addFunction);
+    sub.addEventListener("click", subFunction);
+    multi.addEventListener("click", multiFunction);
+    div.addEventListener("click", divFunction);
+
+    function addFunction() {
+        let add = parseInt(input1.value) + parseInt(input2.value);
+        document.getElementById("output").innerHTML = add;
+    }
+    function subFunction() {
+        let sub = parseInt(input1.value) - parseInt(input2.value);
+        document.getElementById("output").innerHTML = sub;
+    }
+    function multiFunction() {
+        let mut = parseInt(input1.value) * parseInt(input2.value);
+        document.getElementById("output").innerHTML = mut;
+    }
+    function divFunction() {
+        let div = parseInt(input1.value) / parseInt(input2.value);
+        document.getElementById("output").innerHTML = div
+    }
+
+</script>
+
+</html>

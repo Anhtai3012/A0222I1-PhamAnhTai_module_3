@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="checkNumb()">Check Number</button>
+    <p id="check-numb"></p>
+    <script>
+        let array = new Array;
+        const MAX = 10;
+
+        for (i = 0; i < MAX; i++) {
+            array[i] = prompt("Input Element");
+        }
+        console.log(array);
+        /*    function checkNumb() {    // check value
+                let checkNumb = prompt("Check Number");
+                for (j = 0; j < MAX; j++) {
+                    if (array[j] == checkNumb){
+                        document.getElementById("check-numb").innerHTML = "V is in the array";
+                        break;
+                    }
+                    if (j == MAX -1){
+                        document.getElementById("check-numb").innerHTML = "V isn't in the array";
+                    }
+                }
+            }    */
+
+        /*   function checkNumb() {        // indexOf()
+               let checkNumb = prompt("Check Number");
+               if (array.indexOf(checkNumb) > 0) {
+                   document.getElementById("check-numb").innerHTML = "V is in the array";
+               } else {
+                   document.getElementById("check-numb").innerHTML = "V isn't in the array";
+               }
+           }
+   */
+
+        function checkNumb() {      // includes
+            let checkNumb = prompt("Check Number");
+            if (array.includes(checkNumb)) {
+                document.getElementById("check-numb").innerHTML = "V is in the array";
+            } else {
+                document.getElementById("check-numb").innerHTML = "V isn't in the array";
+            }
+        }
+    </script>
+</body>
+
+</html>

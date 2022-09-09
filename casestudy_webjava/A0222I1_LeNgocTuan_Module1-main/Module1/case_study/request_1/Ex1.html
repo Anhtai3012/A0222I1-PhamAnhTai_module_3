@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="output"></div>
+    <script>
+      const HEIGHT = parseInt(prompt("height: "));
+      const WIDTH = parseInt(prompt("weight: "));
+      let str = "";
+      for (let i = 1; i <= HEIGHT; i++) {
+        if (i == 1 || i == HEIGHT) {
+          for (let j = 1; j <= WIDTH; j++) {
+            str += " * ";
+          }
+        } else {
+          for (let j = 1; j <= WIDTH; j++) {
+            str += j == 1 || j == WIDTH ? " * " : " &nbsp&nbsp ";
+          }
+        }
+        str += "<br>";
+      }
+      document.getElementById("output").innerHTML = str;
+    </script>
+  </body>
+</html>

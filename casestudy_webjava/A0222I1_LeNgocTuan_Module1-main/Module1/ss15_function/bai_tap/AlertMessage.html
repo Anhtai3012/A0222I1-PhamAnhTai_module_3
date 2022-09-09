@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="alertMessage()">Hello</button>
+    <button onclick="actionPlusArgument()">Plus</button>
+    <button onclick="greaterOfLesser()">Comparisons</button>
+    <script>
+        function alertMessage() {
+            alert("Hello Everybody");
+        }
+
+        // them 1 gia tri cua tham so cua ham
+        function plusArgument(argument) {
+            return ++argument;
+        }
+        function actionPlusArgument() {
+            let input = parseInt(prompt("Input argument"));
+            alert(plusArgument(input));
+        }
+
+        // so sanh 2 tham so cua ham 
+        function comparisons(a, b) {
+            if (a > b) return "a > b";
+            if (b > a) return (a + b);
+        }
+        function greaterOfLesser() {
+            let a = parseInt(prompt("Input a"));
+            let b = parseInt(prompt("Input b"));
+            alert(comparisons(a, b));
+        }
+
+    </script>
+</body>
+
+</html>

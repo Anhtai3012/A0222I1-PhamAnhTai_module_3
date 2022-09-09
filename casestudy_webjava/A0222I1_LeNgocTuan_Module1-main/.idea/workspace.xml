@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="9298bb74-64dd-4aca-abbf-29631f84e7e2" name="Changes" comment="Changes">
+      <change beforePath="$PROJECT_DIR$/Module1/ss4_git/thuc_hanh/wf-hello" beforeDir="false" afterPath="$PROJECT_DIR$/Module1/ss4_git/thuc_hanh/wf-hello" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Module1/ss4_git/thuc_hanh/wf-hello/hello.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Module1/ss4_git/thuc_hanh/wf-hello/hello.txt" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="25kJXOIzr8FAuaEh6BxS4kb0CBj" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "D:/CODEGYM/Full module/Module2"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="9298bb74-64dd-4aca-abbf-29631f84e7e2" name="Changes" comment="" />
+      <created>1646065198613</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1646065198613</updated>
+      <workItem from="1646065198619" duration="41000" />
+      <workItem from="1646065304559" duration="68000" />
+      <workItem from="1646065392433" duration="191000" />
+      <workItem from="1646065662226" duration="50000" />
+      <workItem from="1646065732590" duration="25000" />
+      <workItem from="1646117717706" duration="31000" />
+      <workItem from="1646117761913" duration="78000" />
+      <workItem from="1646117855191" duration="92000" />
+      <workItem from="1646117961551" duration="237000" />
+      <workItem from="1646120232307" duration="145000" />
+      <workItem from="1646120389120" duration="3000" />
+      <workItem from="1646660831875" duration="1038000" />
+      <workItem from="1646661938783" duration="204000" />
+      <workItem from="1646662679350" duration="326000" />
+      <workItem from="1646663022976" duration="1000" />
+      <workItem from="1646671463648" duration="31000" />
+      <workItem from="1646671519615" duration="15000" />
+      <workItem from="1655218065381" duration="69000" />
+      <workItem from="1656661683135" duration="21000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

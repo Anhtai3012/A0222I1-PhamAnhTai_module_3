@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Nhiet do</title>
+</head>
+
+<body>
+    <script>
+        /*      let input1 = parseInt(prompt("Input Temperature "), 0); // theo hướng tự động tăng giảm theo nhiệt độ
+              if (input1 < 100 && input1 > 20) {
+                  alert("Nhiệt độ thích hợp");
+              } else {
+                  for (input1; input1 >= 100; input1--) {
+                      if (input1 == 100) {
+                          alert("Nhiệt độ thích hợp");
+                          break;
+                      } else {
+                          alert("Giảm nhiệt độ vì nhiệt độ bây giờ là " + input1);
+                          continue;
+                      }
+                      break;
+                  }
+                  for (input1; input1 <= 20; input1++) {
+                      if (input1 == 20) {
+                          alert("Nhiệt độ thích hợp");
+                          break;
+                      } else {
+                          alert("Tăng nhiệt độ vì nhiệt độ hiện tại là " + input1);
+                          continue;
+                      }
+                      break;
+                  }
+              } */
+        // theo hướng lặp hành động nhập nhiệt độ
+        do {
+            let input = parseInt(prompt("Input Temperature "),0);
+            if (input < 20) {
+                alert("Tăng nhiệt");
+            } else if (input > 100) {
+                alert("Giảm nhiệt");
+            }
+            else {
+                alert("Nhiệt độ thích hợp " + input);
+                break;
+            }
+        } while (true); 
+    </script>
+</body>
+
+</html>

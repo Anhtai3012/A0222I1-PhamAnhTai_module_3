@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      class Apple {
+        constructor(weight) {
+          this.weight = 10;
+        }
+        showWeight() {
+          console.log(`Apple is ${this.weight} g`);
+        }
+        checkStatus() {
+          if (this.weight > 0) return true;
+          return false;
+        }
+      }
+      class Person {
+        constructor(name, gender, weight, voice) {
+          this.name = name;
+          this.gender = gender;
+          this.weight = weight;
+          this.voice = voice;
+        }
+        talkSomething() {
+          this.voice = prompt("Talk Something");
+          console.table(`${this.name} talk ${this.voice}`);
+        }
+        eatApple(Apple) {
+          while (Apple.checkStatus()) {
+            Apple.weight--;
+            this.weight++;
+          }
+          return this.weight;
+        }
+        checkApple(Apple) {
+          console.table(Apple.weight);
+        }
+        checkPerson(target) {
+          console.table(
+            `Name: ${target.name}, Gender: ${target.gender}, Weight: ${target.weight} kg`
+          );
+        }
+      }
+      let apple1 = new Apple(152);
+      apple1.showWeight();
+      let person1 = new Person("Adam", "Male", 70);
+      person1.talkSomething();
+      person1.checkApple(apple1);
+      person1.eatApple(apple1);
+      console.log(person1.weight);
+      let person2 = new Person("Eva", "Female", 50);
+      person1.checkPerson(person2);
+    </script>
+  </body>
+</html>

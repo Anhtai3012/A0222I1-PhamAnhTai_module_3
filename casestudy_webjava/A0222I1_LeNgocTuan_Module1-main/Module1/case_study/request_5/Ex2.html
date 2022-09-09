@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let numbers = new Array();
+      const M = parseInt(prompt("Input M: "));
+      const N = parseInt(prompt("Input N: "));
+      let count = 0;
+
+      function initNumbers(numbers) {
+        for (let i = 0; i < M; i++) {
+          numbers[i] = new Array();
+          for (let j = 0; j < N; j++) {
+            numbers[i][j] = parseInt(prompt("input element "));
+            if(isPrime(numbers[i][j])){
+                count++;
+            }
+          }
+        }
+        return count;
+      }
+
+      function isPrime(number) {
+        if (number == 1) return false;
+        if (number == 2) return true;
+        for (let i = 2; i <= Math.sqrt(number); i++) {
+          if (number % i == 0) return false ;
+        }
+        return true;
+      }
+      
+      console.table(numbers);
+      document.write(`Count Prime Number ${initNumbers(numbers)}`);
+    </script>
+  </body>
+</html>

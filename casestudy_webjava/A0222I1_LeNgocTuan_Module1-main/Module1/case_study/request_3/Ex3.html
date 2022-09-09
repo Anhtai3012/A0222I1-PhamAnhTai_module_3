@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let numerators = [5, 2, 5, 8];    
+      let denominators = [4, 3, 6, 3];
+      function maxFraction(arr1, arr2) {
+        let MAX = -4444444;
+        for (let i = 0; i < arr1.length; i++) {
+          if (MAX < arr1[i] / arr2[i]) {
+            MAX = arr1[i] / arr2[i];
+          }
+        }
+        console.log(Math.ceil(MAX));
+        return Math.ceil(MAX);
+      }
+      maxFraction(numerators, denominators);
+    </script>
+  </body>
+</html>

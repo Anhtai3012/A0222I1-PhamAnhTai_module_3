@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p> Chuỗi nhập là <span id="list-array"></span></p>
+    <p> Chuỗi bị đảo là <span id="reverse-array"></span></p>
+    <script>
+        let array = new Array;
+        const MAX = parseInt(prompt("Input Size"));
+
+        for (i = 0; i < MAX; i++) {
+            array[i] = prompt("Element you want input ");
+            document.getElementById("list-array").innerHTML += array[i] + ", ";
+        }
+        function reserveArray() {
+            return array.splice("").reverse("").join(", ");
+        }
+        document.getElementById("reverse-array").innerHTML = reserveArray();
+    </script>
+</body>
+
+</html>

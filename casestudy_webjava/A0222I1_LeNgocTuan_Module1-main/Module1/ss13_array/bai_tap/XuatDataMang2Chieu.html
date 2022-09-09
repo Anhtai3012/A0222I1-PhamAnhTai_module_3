@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let array = [
+            [4, 24, 15, 24],
+            [89, 55, 29, 44],
+            [47, 20, 74, 27],
+            [71, 45, 28, 14],
+            [38, 10, 26, 47]
+        ];
+
+        for (i = 0; i < 5; i++) {
+                document.write(`${'"row' + i + '"<br>'}`); 
+            for (let numb of array[i]){
+                document.write(`${'" ' + numb + '"<br>'}`);
+            }
+        }
+    </script>
+</body>
+
+</html>

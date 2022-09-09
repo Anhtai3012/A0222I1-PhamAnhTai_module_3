@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <canvas
+      id="canvasLine"
+      width="400"
+      height="200"
+      style="border: 1px solid #0b0b0b"
+    ></canvas>
+    <script>
+      // ve line
+      const Line = function (canvas, positionBegin, positionEnd) {
+        this.canvas = canvas;
+        this.positionBegin = positionBegin;
+        this.positionEnd = positionEnd;
+        this.draw = function () {
+          canvas.moveTo(this.positionBegin.x, this.positionBegin.y);
+          canvas.lineTo(this.positionEnd.x, this.positionEnd.y);
+          canvas.stroke();
+        };
+      };
+      let canvas2 = document.getElementById("canvasLine").getContext("2d");
+      let line = new Line(canvas2, { x: 20, y: 50 }, { x: 200, y: 100 });
+      line.draw();
+    </script>
+  </body>
+</html>

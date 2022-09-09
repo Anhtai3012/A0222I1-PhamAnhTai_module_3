@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Chuyen Doi Tien te</title>
+  <style>
+    table {
+      width: 300px;
+      border-collapse: collapse;
+      background-color: lightblue;
+    }
+
+    td {
+      width: 100px;
+      text-align: center;
+    }
+
+    .c1 {
+      text-align: left;
+      color: red;
+    }
+
+    button {
+      background-color: mediumpurple;
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+  <table>
+    <caption> Convert ALL</caption>
+    <tr>
+      <th> Amount </th>
+      <th> From Currency </th>
+      <th> To Currency </th>
+    </tr>
+    <tr>
+      <td><input type="number" id="input1" name="input1" style="width: 400px"></td>
+      <td>
+        <select id="input2">
+          <option value=1 name="VND">Viet Nam (VND)</option>
+          <option value=700 name="YEN">Japan (YEN)</option>
+          <option value=23000 name="USD">America (USD)</option>
+          <option value=32000 name="GBP">England (GBP)</option>
+        </select>
+      </td>
+      <td>
+        <select id="input3">
+          <option value=1 name="VND">Viet Nam (VND)</option>
+          <option value=700 name="YEN">Japan (YEN)</option>
+          <option value=23000 name="USD">America (USD)</option>
+          <option value=32000 name="GBP">England (GBP)</option>
+        </select>
+      </td>
+      <td> <button id="convert"> Convert</button></td>
+    </tr>
+    <tr>
+      <td class="c1"> Result: <span id="output"></span></td>
+    </tr>
+
+  </table>
+  <script>
+    var input1 = document.getElementById("input1");
+    var converter = document.getElementById("convert");
+    converter.addEventListener("click", convertCurrency);
+    function convertCurrency() {
+      let output = parseInt(input1.value) * ((parseInt(input2.value) / parseInt(input3.value)));
+      document.getElementById("output").innerHTML = output;
+    }
+
+  </script>
+</body>
+
+</html>

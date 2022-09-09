@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator Plus</title>
+    <style>
+        form {
+            background-color: azure;
+            width: 520px;
+            border-collapse: collapse;
+            text-align: center;
+
+        }
+
+        .t1 {
+            width: 450px;
+            height: 200px;
+            background-color: aliceblue;
+            color: black;
+            border-collapse: collapse;
+            font-size: 50px;
+            text-align: right;
+        }
+
+        .b1 {
+            width: 90px;
+            height: 90px;
+            background-color: blanchedalmond;
+            color: blue;
+            text-align: center;
+            font-size: 50px;
+        }
+        
+        form td{
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <form name="calculator">
+        <fieldset>
+            <table>
+                <tr>
+                    <td colspan="4">
+                        <input class="t1" id="output" name="display" type="text" disabled>
+                    </td>
+                </tr>
+                <tr>
+                    <td><input type="button" class="b1" name="seven" value="7" onclick="calculator.display.value +=7"> </td>
+                    <td><input type="button" class="b1" name="eight" value="8" onclick="calculator.display.value +=8"></td>
+                    <td><input type="button" class="b1" name="nine" value="9" onclick="calculator.display.value +=9"></td>
+                    <td><input type="button" class="b1" name="+" value="+" onclick="calculator.display.value += '+'"></td>
+                </tr>
+                <tr>
+                    <td><input type="button" class="b1" name="four" value="4" onclick="calculator.display.value +=4"></td>
+                    <td><input type="button" class="b1" name="five" value="5" onclick="calculator.display.value +=5"></td>
+                    <td><input type="button" class="b1" name="six" value="6" onclick="calculator.display.value +=6"></td>
+                    <td><input type="button" class="b1" name="-" value="-" onclick="calculator.display.value += '-'"></td>
+                </tr>
+                <tr>
+                    <td><input type="button" class="b1" name="three" value="3" onclick="calculator.display.value +=3"></td>
+                    <td><input type="button" class="b1" name="two" value="2" onclick="calculator.display.value +=2"></td>
+                    <td><input type="button" class="b1" name="one" value="1" onclick="calculator.display.value +=1"></td>
+                    <td><input type="button" class="b1" name="x" value="*" onclick="calculator.display.value += '*'"></td>
+                </tr>
+                <tr>
+                    <td><input type="button" class="b1" name="clear" value="C" onclick="calculator.display.value = ''"></td>
+                    <td><input type="button" class="b1" name="zero" value="0" onclick="calculator.display.value +=0"></td>
+                    <td><input type="button" class="b1" name="doit" value="="
+                            onclick="calculator.display.value = eval(calculator.display.value)"></td>
+                    <td><input type="button" class="b1" name="/" value="/" onclick="calculator.display.value += '/'"></td>
+                </tr>
+            </table>
+        </fieldset>
+    </form>
+    <script>
+        var input1 = document.getElementById("output")
+    </script>
+</body>
+
+</html>

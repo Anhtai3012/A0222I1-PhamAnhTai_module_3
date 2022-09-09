@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>IF-ELSE, SWITCH-CASE</title>
+</head>
+
+<body>
+    <script>
+        let year = prompt("Enter a year", 0);
+        let input1 = parseInt(year);
+        if (isNaN(input1)) {
+            alert("Moi nhap so")
+        } else if (input1 < 0) {
+            document.write("Day la nam truoc cong nguyen, nhin thu lai");
+        }
+        else if (input1 % 4 == 0) {
+            if (input1 % 100 == 0) {
+                if (input1 % 400 == 0) {
+                    document.write("Day la nam nhuan");
+                }
+                else {
+                    document.write("Day la nam khong nhuan")
+                }
+
+            } else {
+                document.write("day la nam nhuan")
+            }
+        } else {
+            document.write("Day la nam khong nhuan")
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form>
+        <fieldset style="width: 50%">
+            <legend>Dictionary Eng - Viet</legend>
+            <input type="text" placeholder="English" id="input1">
+            <input type="button" value="Translate" onclick="transEng()"> &nbsp;
+            <span id="output"></span>
+        </fieldset>
+    </form>
+    <button id="push" onclick="insertData()">Insert</button>
+    <script>
+        let input = document.getElementById("input1");
+        let engData = ["dictionary", "middle", "game", "top"];
+        let vietData = ["từ điển", "giữa", "trò chơi", "bên trên"];
+        function transEng() {
+            let trans = input.value;
+            for (i = 0; i < engData.length; i++) {
+                if (engData[i] == trans.toLowerCase()) {
+                    document.getElementById("output").innerHTML = vietData[i];
+                    break;
+                }
+                if (i == engData.length - 1) {
+                    alert("Not Match");
+                    break;
+                }
+            }
+        }
+
+        function insertData() {
+            let engIns = prompt("Text English");
+            let vietIns = prompt("Viet Translate");
+            engData.push(engIns);
+            vietData.push(vietIns);
+            console.log(engData);
+            console.log(vietData);
+        }
+    </script>
+</body>
+
+</html>

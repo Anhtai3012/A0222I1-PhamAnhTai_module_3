@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="displayHero"></div>
+    <script>
+      class Hero {
+        constructor(avatar, size, position) {
+          this.avatar = avatar;
+          this.position = position;
+          this.size = size;
+        }
+        statusHero() {
+          return `<img width = "${this.size.x}" height = "${this.size.y}" src='${this.avatar}' style="top: ${this.position.x}px; left: ${this.position.y}px; position:absolute;"/>`;
+        };
+        moveHeroLeft() {
+          this.position.y -= 100;
+          console.log(this.position.y);
+        };
+        moveHeroRight() {
+          this.position.y += 100;
+          console.log(this.position.y);
+        };
+        moveHeroUp() {
+          this.position.x -= 100;
+          console.log(this.position.x);
+        };
+        moveHeroDown() {
+          this.position.x += 100;
+          console.log(this.position.x);
+        };
+      }
+      let Samurai = new Hero(
+        "Img/samurai.png",
+        { x: 135, y: 240 },
+        { x: 0, y: 0 }
+      );
+      function gameStart() {
+        if (
+          Samurai.position.y < window.innerWidth - Samurai.size.y &&
+          Samurai.position.x == 0
+        ) {
+          Samurai.moveHeroRight();
+        } else if (
+          Samurai.position.y > window.innerWidth - Samurai.size.y &&
+          Samurai.position.x < window.innerHeight - Samurai.size.x
+        ) {
+          Samurai.moveHeroDown();
+        } else if (Samurai.size.x > window.innerHeight - Samurai.position.x) {
+          Samurai.moveHeroLeft();
+        }
+        if (Samurai.position.y === 0) {
+          Samurai.moveHeroUp();
+        }
+        document.getElementById("displayHero").innerHTML = Samurai.statusHero();
+        setTimeout(gameStart, 110);
+      }
+      gameStart();
+    </script>
+  </body>
+</html>

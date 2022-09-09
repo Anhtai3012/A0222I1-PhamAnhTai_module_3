@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p><button onclick="inputSalary()">Input Your Salary</button></p>
+    <p>Your Tax is: <span id="tax"></span></p>
+    <p>Your Salary after Tax: <span id="salary"></span></p>
+    <script>
+        function inputSalary(){
+            let input = parseInt(prompt("Your Salary: "));
+            if (input >= 15000000) {
+                document.getElementById("tax").innerHTML = `15% (tax money is ${input*0.15})`;
+                document.getElementById("salary").innerHTML = input - (input * 0.15);
+            } else if ( input >= 7000000) {
+                document.getElementById("tax").innerHTML = `10% (tax money is ${input*0.1})`;
+                document.getElementById("salary").innerHTML = input - (input * 0.1);
+            } else {
+                document.getElementById("tax").innerHTML = `5% (tax money is ${input*0.05})`;
+                document.getElementById("salary").innerHTML = input - (input * 0.05);
+            }
+        }
+
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h3>Find X</h3>
+    <p><input type="text" id=input1></p>
+    <button id="add" onclick="addArray()">Add Array</button>
+    <button id="display" onclick="displayArray()">Display</button>
+    <button id="findX" onclick="findX()">Find X in Array</button>
+    <div id="output"></div>
+    <script>
+    let x = 0;
+    let array = Array();
+
+    function addArray() {
+        array[x] = document.getElementById("input1").value;
+        alert("Element add " + x + " - value: " + input1.value);
+        x++;
+        document.getElementById("input1").innerHTML = "";
+    }
+
+    function displayArray() {
+        let element = "<hr>"
+        for (lens = 0; lens < array.length; lens++) {
+            element += "Element " + lens + " - value " + array[lens] + "<br>";
+
+        }
+        document.getElementById("output").innerHTML = element;
+    }
+
+    function findX() {
+        let numbToFind = parseInt(prompt("number X want to find: "));
+        for (lens = 0; lens < array.length; lens++) {
+            if (numbToFind == array[lens]) {
+                alert("Element want to find is " + lens + " value " + array[lens]);
+                break;
+            }
+        }
+    }
+    </script>
+</body>
+
+</html>

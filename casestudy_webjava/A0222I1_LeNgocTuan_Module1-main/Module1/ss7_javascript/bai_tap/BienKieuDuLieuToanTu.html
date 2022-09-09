@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bien va Toan Tu</title>
+</head>
+<body>
+
+<p> Nhap diem Toan <input name="iput1" type="number" id="input1"></p>
+<p> Nhap diem Ly <input name="input2" type="number" id="input2"></p>
+<p> Nhap diem Hoa <input name="input3" type="number" id="input3"></p>
+<p> Tong diem dat duoc la <span id="output1"></span></p>
+<p> Trung binh cong la <span id="output2"></span></p><hr>
+
+<p> Nhap gia tri <sup>o</sup>C (Celsius) <input name="input4" id="input4" type="number">
+  <button id="click"> Chuyen doi </button></p>
+<p> Vay gia tri do Fahrenheit la <span id="output3"></span></p><hr>
+
+<p> Nhap duong kinh hinh tron <input type="number" id="input5" name="input5"> </p>
+<p> Vay Chu Vi Hinh Tron la <span id="output4"></span></p>
+<p> Vay Dien tich Hinh Tron la <span id="output5"></span></p>
+
+<script>
+  var input1 = document.getElementById("input1");
+  var input2 = document.getElementById("input2");
+  var input3 = document.getElementById("input3");
+  var click = document.getElementById("click");
+  var input5 = document.getElementById("input5")
+
+  input3.addEventListener("keyup",output1Function);
+  click.addEventListener("mousedown",clickFunction);
+  input5.addEventListener("keyup",circle);
+
+  function output1Function(){
+    let sum = parseInt(input1.value) + parseInt(input2.value) + parseInt(input3.value);
+    let avg = sum/3;
+    document.getElementById("output1").innerHTML = sum;
+    document.getElementById("output2").innerHTML = avg;
+  }
+  function clickFunction() {
+    let a = document.getElementById("input4").value;
+    let output3 = ( 160 + (parseInt(a)) * 9 ) / 5;
+    document.getElementById("output3").innerHTML = output3;
+  }
+  function circle(){
+    let r = parseInt(input5.value) / 2;
+    let PC = 2 * r * 3.14;
+    let AC = r * r * 3.14;
+    document.getElementById("output4").innerHTML = PC;
+    document.getElementById("output5").innerHTML = AC;
+  }
+
+</script>
+</body>
+</html>

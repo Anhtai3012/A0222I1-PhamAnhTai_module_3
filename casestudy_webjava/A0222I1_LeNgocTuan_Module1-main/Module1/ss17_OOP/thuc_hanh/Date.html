@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day</title>
+</head>
+
+<body>
+    <div id="outputToday"></div>
+    <script>
+        // let date = new Date();
+        // let day = {
+        //     day: date.getDate(),
+        //     month: date.getMonth(),
+        //     year: date.getFullYear(),
+        //     getDay: function () {
+        //         return this.day + "/" + (this.month + 1) + "/" + this.year;
+        //     },
+        // }
+        // document.getElementById("outputToday").innerHTML = day.getDay();
+
+        let MyDate = function (day, month, year) {
+            this.day = day;
+            this.month = month;
+            this.year = year;
+            this.getDay = function () {
+                return this.day;
+            };
+            this.getMonth = function () {
+                return this.month;
+            };
+            this.getYear = function () {
+                return this.year;
+            };
+            this.setDay = function (day) {
+                this.day = day;
+            };
+            this.setMonth = function (month) {
+                this.month = month;
+            };
+            this.setYear = function (year) {
+                this.year = year;
+            };
+            this.toString = function () {
+                return this.day + "-" + this.month + "-" + this.year
+            };
+        };
+        MyDate.prototype.setDate = function () {
+            let newDate = new Date();
+            newDate.setDate(20);
+            return newDate.toString();
+        }
+        let date = new MyDate(11, 4, 2022);
+        let day = date.getDay();
+        let month = date.getMonth();
+        let year = date.getYear();
+        alert(date.toString());
+        date.setDay(18);
+        date.setMonth(07);
+        date.setYear(2019);
+
+        [day, month, year] = [date.getDay(), date.getMonth(), date.getYear()]; //need update new value from date object
+
+        alert([day, month, year].join("/"));
+        document.write(date.setDate());
+    </script>
+</body>
+
+</html>

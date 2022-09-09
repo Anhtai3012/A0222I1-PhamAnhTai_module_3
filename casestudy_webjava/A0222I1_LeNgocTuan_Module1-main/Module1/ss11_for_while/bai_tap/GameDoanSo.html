@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Game đoán số</title>
+</head>
+
+<body>
+    <form>
+        <table>
+            <tr>
+                <td>
+                    <input type="button" value="Play" id="input1">
+                </td>
+                <td>
+                    <input type="button" value="Reset" name="reset">
+                </td>
+            </tr>
+        </table>
+    </form>
+    <script>
+        let input1 = document.getElementById("input1");
+
+        input1.addEventListener("click", guessNumFunction);
+
+        function guessNumFunction() {
+            let input2 = parseInt(prompt("Input number you want guess from", 0));
+            let input3 = parseInt(prompt("Input number you want guess to", 0));
+            let computer = Math.floor(Math.random() * (input3 - input2 + 1) + input2);
+            let i = 1;
+            let check = true;
+            do {
+                let guess = parseInt(prompt("Guess number: "), 0);
+                let func = (guess == computer) ? "h1" : (guess > computer) ? "h2" : "h3";     
+                switch (func) {
+                    case "h1":
+                        alert("Amazing Good Job");
+                        check = false;
+                        break;
+                    case "h2":
+                        alert("Lớn hơn");
+                        break;
+                    case "h3":
+                        alert("Nhỏ Hơn");
+                        break;
+                }
+                i++;
+            } while (i <= 3 && check);
+        }
+    </script>
+</body>
+
+</html>

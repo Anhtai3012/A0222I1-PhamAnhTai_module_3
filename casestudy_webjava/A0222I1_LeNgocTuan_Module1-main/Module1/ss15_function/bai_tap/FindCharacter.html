@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let inputArray = prompt("Input text you want ");
+        let inputCharacter = prompt("Input character you want ");
+        console.log(inputArray);
+        console.log(inputCharacter);
+        function findCharacter(array, character) {
+            let arr = array.split("");
+            let count = 0;
+            if (arr.length == 0 || character.length == 0) {
+                return "Again";
+            }
+            let len = arr.filter(c => c === character).length;
+            return len == 0 ? -1 : len;
+
+            // let result = [];
+            // for(let i = 0; i < arr.length; i++){
+            //     if(arr[i] === character) {
+            //         result.push(arr[i]);
+            //     }
+            // }
+            // return result.length == 0 ? -1 : result.length;
+
+            // if (arr.indexOf(character) == -1) {
+            //     return -1;
+            // }
+            // return (arr.filter(text => text === character)).length;
+
+        }
+        console.log(findCharacter(inputArray, inputCharacter));
+        alert(findCharacter(inputArray, inputCharacter));
+    </script>
+</body>
+
+</html>

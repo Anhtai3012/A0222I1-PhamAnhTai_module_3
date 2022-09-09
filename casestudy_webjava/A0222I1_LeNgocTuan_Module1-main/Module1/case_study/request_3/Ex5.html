@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="menu"></div>
+    <div id="output"></div>
+    <script>
+      const PRODUCE = [
+        "Cafe",
+        "Orange Juice",
+        "Carrot Juice",
+        "Tomato Juice",
+        "Water",
+        "Coconut Juice",
+        "Pepsi",
+      ];
+      const PRICE = [10, 12, 15, 13, 6, 20, 8];
+      let total = 0;
+      let menu = "";
+      while (true) {
+        let idx = parseInt(
+          prompt(`1. Cafe 
+2. Orange Juice
+3. Carrot Juice
+4. Tomato Juice
+5. Water
+6. Coconut Juice
+7. Pepsi
+8. End and Take Bill`)
+        );
+        if (idx > PRODUCE.length) break;
+        let number = parseInt(
+          prompt(
+            `${PRODUCE[idx - 1]} has price is ${PRICE[idx - 1]} \$
+You want how many? `,
+            0
+          )
+        ); 
+        menu +=
+          `${PRODUCE[idx - 1]} with price in ${
+            PRICE[idx - 1]
+          } \$. Number is ${number}. Price is ${number * PRICE[idx - 1]} \$.` +
+          "<br>";
+        total += number * PRICE[idx - 1];
+        document.getElementById("menu").innerHTML = "Menu: <br>" + menu;
+      }
+
+      document.getElementById("output").innerHTML = `Your bill is ${total} \$`;
+    </script>
+  </body>
+</html>

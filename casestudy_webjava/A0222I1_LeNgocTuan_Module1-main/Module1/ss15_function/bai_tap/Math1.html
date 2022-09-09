@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p><input type="button" id="inputX" value="Squared X" onclick="squaredX()"></p>
+    <div id="output1"></div>
+    <p> <button id="input1" onclick="calculatorPerimeterCircle()">Radius</button> </p>
+    <div id="output2"></div>
+    <p><button id="input2" onclick="calculatorFactorials()">Factorials of N</button></p>
+    <div id="output3"></div>
+
+    <script>
+             // binh phuong 1 so
+        function squared(numb) {     
+            if (numb == 0) {
+                return 1
+            }
+            return numb * numb;
+        }
+        function squaredX() {
+            let numb = parseInt(prompt("Input number want to squared "));
+            document.getElementById("output1").innerHTML = "Result " + squared(numb);
+        }
+
+        // chu vi dien tich hinh tron
+        const PI = 3.1415;
+        function perimeterCircle(radius) {
+            if (radius <= 0) {
+                return "Try input radius again";
+            }
+            return 2 * radius * PI;
+        }
+        function areaCircle(radius) {
+            if (radius <= 0) {
+                return "Try input radius again";
+            }
+            return Math.pow(radius, 2) * PI;
+        }
+        function calculatorPerimeterCircle() {
+            let radius = parseInt(prompt("Input radius"));
+            if (radius <= 0) {
+                alert("Try input radius again");
+            } else {
+                document.getElementById("output2").innerHTML = "Perimeter " + perimeterCircle(radius) + "<br> Area " + areaCircle(radius);
+            }
+        }
+
+        // giai thua 1 so
+
+        function factorial(numb) {
+            if (numb == 0) return 1;
+            return numb * factorial(numb - 1);
+        }
+        function calculatorFactorials() {
+            let numb = parseInt(prompt("Input n"));
+            document.getElementById("output3").innerHTML = "Factorial of Number is " + factorial(numb);
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Vẽ Hình Chữ Nhật</title>
+</head>
+
+<body>
+    <div>
+        <p> nhập chiều dài hình chữ nhật <input type="text" id="input1"></p>
+        <p> nhập chiều rộng hình chữ nhật <input type="text" id="input2"></p>
+        <button id="output">Draw</button>
+    </div>
+    <div id="rectangle"></div>
+
+    <script>
+        var input1 = document.getElementById("input1");
+        var input2 = document.getElementById("input2");
+        var output = document.getElementById("output");
+
+        output.addEventListener("click", drawFunction);
+
+        function drawFunction() {
+            let height = parseInt(input2.value);
+            let width = parseInt(input1.value);
+            let str = "";
+            for (i = 1; i <= height; i++) {
+                if (i == 1 || i == height) {
+                    for (let j = 1; j <= width; j++) {
+                        str += " * ";
+                    }
+                }
+                else {
+                    for (let j = 1; j <= width; j++) {
+                        str += j == 1 || j == width ? " * " : " &nbsp&nbsp ";
+                    }
+                }
+                str += "<br>";
+            }
+            document.getElementById("rectangle").innerHTML = str;
+        }
+        
+    </script>
+</body>
+
+</html>

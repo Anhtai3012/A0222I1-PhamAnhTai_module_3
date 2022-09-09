@@ -1,0 +1,71 @@
+body{
+    background-color: azure;
+}
+.header {
+    width: 100%;
+    height: 50px;
+    background-color: red;
+    text-align: center;
+    color: black;
+}
+
+.nav {
+    width: 100%;
+    height: 50px;
+    background-color: burlywood;
+    text-align: center;
+    color: black;
+    margin-top: 5px;
+}
+
+.section {
+    display: flex;
+    width: 100%;
+    height: 300px;
+    background-color: coral;
+    color: black;
+}
+
+.aside {
+    display: flex;
+    width: 70%;
+    height: 600px;
+    background-color: bisque;
+    color: black;
+    margin-top: 5px;
+    margin-left: 5px;
+}
+
+.article {
+    position: relative;
+    width: 100%;
+    height: 295px;
+    background-color: cornsilk;
+    color: black;
+    margin-top: 5px;
+}
+
+.leftContent {
+    position: relative;
+    height: 600px;
+    width: 30%;
+    height: 600px;
+    top: 5px;
+}
+
+.footer {
+    width: 100%;
+    height: 50px;
+    clear: both;
+    margin-top: 10px;
+    background-color: red;
+    text-align: center;
+    color: black;
+}
+
+.main {
+    position: relative;
+    width: 100%;
+    height: 600px;
+    display: flex;
+}

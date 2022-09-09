@@ -1,0 +1,54 @@
+#head {
+    width: 100%;
+    overflow: auto;
+  }
+  
+  .logo {
+    width: 20%;
+    background-color: aquamarine;
+    float: left;
+    box-sizing: border-box;
+    padding: 30px;
+  }
+  
+  .banner {
+    width: 80%;
+    background-color: aqua;
+    float: right;
+    box-sizing: border-box;
+    padding: 30px;
+  }
+  
+  #head-link {
+    background-color: blue;
+    padding: 10px;
+  }
+  
+  .content::after {
+    content: '';
+    clear: both;
+    display: table;
+  }
+  
+  #left, #content, #right {
+    width: 15%;
+    float: left;
+    box-sizing: border-box;
+    padding: 150px 30px;
+    background-color: antiquewhite;
+  }
+  
+  #content {
+    width: 70%;
+    background-color: aliceblue;
+  }
+  
+  #right {
+    background-color: wheat;
+  }
+  
+  footer {
+    padding: 30px;
+    background-color: brown;
+  }
+  

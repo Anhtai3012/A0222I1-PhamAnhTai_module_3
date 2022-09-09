@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="array"></div>
+    <p><button onclick="changeText()">Change</button></p>
+    <div id="output"></div>
+    <script>
+        let array = prompt("Input");
+        document.getElementById("array").innerHTML = array + "<br>";
+        function changeText() { // doi ki tu thanh 1 ki tu mong muon
+            let arr = array.split("");
+            console.log(arr);
+            let deleteX = prompt("input text you want delete");
+            let changeY = prompt("input text you want change");
+            for (i = 0; i < arr.length; i++) {
+                let idx = arr.indexOf(deleteX);
+                if (idx < 0) {
+                    break;
+                }
+                arr.splice(idx, 1, changeY);
+            }
+            console.log(arr);
+            document.getElementById("output").innerHTML = arr.join("");
+        }
+    </script>
+</body>
+
+</html>

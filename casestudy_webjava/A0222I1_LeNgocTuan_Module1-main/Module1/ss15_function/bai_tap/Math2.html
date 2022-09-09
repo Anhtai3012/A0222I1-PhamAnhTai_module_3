@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p><button onclick="findMin()">Find min in a,b,c </button></p>
+    <div id="output1"></div>
+    <p><button onclick="findPositive()">Positive Integer</button></p>
+    <div id="output2"></div>
+    <script>
+        function minInNumber(a, b, c) { // min in abc
+            if (a < b && a < c) {
+                return a;
+            } else if (b < c && b < a) {
+                return b;
+            } else {
+                return c;
+            }
+        }
+        function findMin() {
+            let a = parseInt(prompt("Input a"));
+            let b = parseInt(prompt("Input b"));
+            let c = parseInt(prompt("Input c"));
+            console.log(a,b,c);
+            document.getElementById("output1").innerHTML = "Min is " + minInNumber(a,b,c);
+        }
+
+        // kiem  tra so nguyen duong 
+        function positiveInteger(numb){
+            if(numb == 0){
+                return 0;
+            } else if(numb > 0){
+                return true;
+            } else {
+                return false;
+            }
+        }
+        function findPositive(){
+            let numb = parseInt(prompt("Input X"));
+            if(positiveInteger(numb)){
+                document.getElementById("output2").innerHTML = numb + " is Positive Integer";
+            } else {
+                document.getElementById("output2").innerHTML = numb + " is NOT Positive Integer";
+            }
+        }
+
+    </script>
+</body>
+
+</html>

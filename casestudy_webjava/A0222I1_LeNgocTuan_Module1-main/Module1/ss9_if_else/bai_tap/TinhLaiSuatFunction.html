@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title> Lãi suất kép</title>
+</head>
+
+<body>
+    <p> Tính lãi vay ngân hàng theo Tiền lãi hằng tháng = Dư nợ gốc x Lãi suất vay/Thời gian vay</p>
+    <p> Nhập số tiền muốn vay <input type="number" name="input1" id="input1"></p>
+    <p> Nhập số tháng muốn vay <input type="number" name="input2" id="input2"></p>
+    
+    <p> <button id="check">Tính lãi suất</button></p>
+    <p> Tiền phải trả sau cùng: <span id="output1"></span> với tổng tiền lãi <span id="output2"></span> </p>
+    <hr>
+    <script>
+        var check = document.getElementById("check");
+        check.addEventListener("click", checkfunction);
+        
+        function calculateMoney(money, month) {
+            let rate = 1.12;
+            if (month == 0)  {
+                return money;
+            };
+            return calculateMoney(money * rate, month - 1);
+        }
+
+        function checkfunction() {
+            let money = parseInt(document.getElementById("input1").value);
+            let month = parseInt(document.getElementById("input2").value);
+            let total = calculateMoney(money, month);
+            document.getElementById("output1").innerHTML = total;
+            document.getElementById("output2").innerHTML = total - money;
+        }
+    </script>
+</body>
+
+</html>

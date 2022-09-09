@@ -1,0 +1,35 @@
+>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        let array = [
+            ["py", 24, "jv", 24],
+            [89, "ab", 29, 44],
+            ["js", 20, 74, "27"],
+            [71, "45", 28, "sf"],
+            [38, 10, "sv", 47]
+        ];
+
+        let countNumb = 0;
+        let countText = 0;
+        for (i = 0; i < array.length; i++) {
+            for (j = 0; j < array.length - 1; j++) {
+                typeof array[i][j] == "number" ? countNumb++: countText++;
+            }
+        }
+        console.log(countNumb);
+        console.log(countText);
+    </script>
+</body>
+
+</html>

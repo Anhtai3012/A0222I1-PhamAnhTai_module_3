@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="a8e76cf6-f07b-4d81-bdc5-6423ddde4358" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../../../../Module4/ss2_controller/bai_tap/sandwich/src/main/java/com/codegym/AppConfiguration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../Module4/ss2_controller/bai_tap/sandwich/src/main/java/com/codegym/AppInitializer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../Module4/ss2_controller/thuc_hanh/time_location/src/main/java/com/time_location/AppConfiguration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../Module4/ss2_controller/thuc_hanh/time_location/src/main/java/com/time_location/AppInitializer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Module1/ss4_git/thuc_hanh/wf-hello" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Module1/ss4_git/thuc_hanh/wf-hello" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Module3/ss11_mvc/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Module3/ss11_mvc/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Module4/ss2_controller/thuc_hanh/validEmail/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Module4/ss2_controller/thuc_hanh/validEmail/.idea/gradle.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../.." />
+  </component>
+  <component name="ProjectId" id="2DhaZD3pQNroeYBzmyKCP73HIL1" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a8e76cf6-f07b-4d81-bdc5-6423ddde4358" name="Default Changelist" comment="" />
+      <created>1661153823283</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1661153823283</updated>
+      <workItem from="1661153825107" duration="18000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+</project>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        textarea {
+            width: 400px;
+            height: 400px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Text Random</h1>
+    <textarea id=input oninput="textShow()" value=""></textarea>
+    <script>
+        let text = "Hôm nay là ngày chủ nhật anh em mình đi chơi !!!";
+        let array = text.split("");
+        let str = "";
+        let lens = 0;
+        let input = document.getElementById("input");
+        function textShow() {
+            str += array[lens];
+            console.log(str);
+            lens++;
+            input.value = str;
+            document.getElementById("input").innerHTML = str;
+            if (lens == array.length + 1) {
+                str = "";
+                lens = 0;
+                input.value = str;
+            }
+        }
+    </script>
+</body>
+
+</html>

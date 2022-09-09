@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .td1 {
+            text-align: left;
+            width: 300px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: lighter;
+        }
+
+        .td2 {
+            border: 0px solid;
+            text-align: center;
+            width: 200px;
+        }
+
+        .td3 {
+            text-align: right;
+            color: rgb(188, 56, 56);
+        }
+
+        .number {
+            width: 30px;
+            font-weight: lighter;
+        }
+
+        button {
+            background-color: rgb(46, 170, 46);
+            color: white;
+            font-size: 20px;
+            margin: auto;
+            width: 100px;
+            height: 40px;
+        }
+
+        input {
+            width: 400px;
+            height: 45px;
+            font-size: 20px;
+        }
+
+        tr:nth-child(odd) {
+            background-color: rgb(194, 200, 202);
+        }
+    </style>
+</head>
+
+<body>
+    <h1> Add New Product</h1>
+    <p><input type="text" id="inputProduct" placeholder="Product you want to add">
+        <span><button onclick="addNew(i)">Add New</button></span>
+    </p>
+    <div id="newProduct"></div>
+
+    <h2> Display All Product
+        <div id="displayPro"></div>
+    </h2>
+    <script>
+        let PRODUCT = ["Pen", "Watch", "Book", "Note", "Ruler", "Hat"];
+        console.log(PRODUCT);
+        function displayProduct(product) {
+            let str = "<table border='0' cellpadding='0' cellspacing='0'> <tr><td colspan = 3> List Product </td><td class='td3'>" + product.length + " Product </td></tr>";
+            for (i = 0; i < product.length; i++) {
+                str += "<tr>";
+                str += "<td class= 'number'> " + (i + 1) + ". </td>"
+                str += "<td class='td1'>" + product[i] + "</td>";
+                str += "<td class='td2'><button onclick='editProduct(" + i + ")'>Edit</button></td>";
+                str += "<td class='td2'><button onclick='deleteProduct(" + i + ")'>Delete</button></td>";
+            }
+            str += "</tr>"
+
+            str += "</table>"
+            document.getElementById("displayPro").innerHTML = str;
+        }
+        function editProduct(i) {
+            let newProduct = prompt("Edit Product",PRODUCT[i]);
+            if (newProduct == "") {
+                alert("Edit Again");
+            } else if (!PRODUCT.includes(newProduct)) {
+                PRODUCT[i] = newProduct;
+                console.log(PRODUCT);
+            } else {
+                alert("Same");
+            }
+            displayProduct(PRODUCT);
+        }
+        function deleteProduct(i) {
+            let ansDelete = confirm("You want delete this product ?");
+            if (ansDelete) {
+                PRODUCT.splice(i, 1);
+            }
+            displayProduct(PRODUCT);
+        }
+        function addNew(i) {
+            let productNew = document.getElementById("inputProduct").value;
+            if (productNew == "") {
+                alert("Add New Again");
+            } else if (!PRODUCT.includes(productNew)) {
+                PRODUCT.push(productNew);
+                console.log(PRODUCT);
+                inputProduct.value = "";
+            }
+            else {
+                alert("Same");
+            }
+            displayProduct(PRODUCT);
+        }
+
+        window.onload = () => {
+            displayProduct(PRODUCT);
+        }
+    </script>
+</body>
+
+</html>

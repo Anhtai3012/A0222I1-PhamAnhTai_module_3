@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta=charset="UTF-8">
+        <title>BMI chi so co the</title>
+</head>
+
+<body>
+    <form>
+        <h3>BMI Calculator</h3>
+        <p> Height: <input type="number" id="input1" name="input1"> cm</p>
+        <p> Weight: <input type="number" id="input2" name="input2"> kg</p>
+        <p><input type="button" value="BMI" id="bmi">
+            <input type="reset" value="Reset">
+        </p>
+        <p> Your body's <span id="output"></span></p>
+    </form>
+    <script>
+
+        var output = document.getElementById("bmi");
+
+
+        output = addEventListener("click", bmiFunction);
+
+        function bmiFunction() {
+            var input1 = parseInt(document.getElementById("input1").value);
+            var input2 = parseInt(document.getElementById("input2").value);
+            var bmiBody = input2 / (((input1)/100) * ((input1)/100));
+            if (bmiBody < 18.5) {
+                document.getElementById("output").innerHTML = "Underweight with BMI's " + bmiBody;
+            }
+            else if (bmiBody < 25) {
+                document.getElementById("output").innerHTML = "Normal with BMI's " + bmiBody;
+            }
+            else if (bmiBody < 30) {
+                document.getElementById("output").innerHTML = "Overweight with BMI's " + bmiBody;
+            } else {
+                document.getElementById("output").innerHTML = "Obese with BMI's " + bmiBody;
+            }
+        }
+    </script>
+</body>
+
+</html>

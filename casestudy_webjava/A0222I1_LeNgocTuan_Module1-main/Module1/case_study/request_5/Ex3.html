@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>Max in Numbers: <span id="max"></span></div>
+    <div>Min in Numbers: <span id="min"></span></div>
+    <script>
+      let numbers = new Array();
+      const M = parseInt(prompt("Input M: "));
+      const N = parseInt(prompt("Input N: "));
+      let max = -1000000;
+      let min = 1000000;
+      function initAndFindMinMax() {
+        for (let i = 0; i < M; i++) {
+          numbers[i] = new Array();
+          for (let j = 0; j < N; j++) {
+            numbers[i][j] = parseInt(prompt("input element "));
+            if (numbers[i][j] > max) {
+              max = numbers[i][j];
+            }
+            if (numbers[i][j] < min) {
+              min = numbers[i][j];
+            }
+          }
+        }
+        console.table(numbers);
+        document.getElementById("max").innerHTML = max;
+        document.getElementById("min").innerHTML = min;
+      }
+      initAndFindMinMax();
+    </script>
+  </body>
+</html>

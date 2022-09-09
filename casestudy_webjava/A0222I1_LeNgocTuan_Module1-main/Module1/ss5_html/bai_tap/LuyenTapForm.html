@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form</title>
+    <style>
+        caption{
+            background: lightblue;
+            color: blue;
+            border-color: yellow;
+            border: 5px solid yellow;
+        }
+        table{
+            background: yellowgreen;
+        }
+    </style>
+</head>
+<body>
+<table>
+    <form action="TaoDanhSach.html" name="form_name">
+    <caption> <b>Đăng Kí Học Viên</b></caption>
+    <tr>
+        <td><label for="name">Họ tên</label></td>
+        <td><input type="text" name="ten" id="name" width= 500px> </td>
+            </tr>
+    <tr>
+        <td><label for="date"> Ngày sinh</label></td>
+        <td><input type="date" name="ten" id="date"></td>
+    </tr>
+    <tr>
+        <td><label> Giới Tính</label></td>
+        <td><input type="radio" name="gender">Nam
+        <input type="radio" name="gender">Nữ
+        <input type="radio" name="gender">Other</td>
+    </tr>
+    <tr>
+        <td><label for="add"> Địa chỉ</label></td>
+        <td><textarea width= 500px name="add" id="add" placeholder="Input here...">
+        </textarea>
+    </tr>
+    <tr>
+        <td>Lớp</td>
+        <td><select>
+            <option>-Chọn lớp-</option>
+            <option>A0222I1</option>
+            <option>A0222I2</option>
+            <option>A0222G1</option>
+            <option>A0222G2</option>
+        </select></td>
+    </tr>
+    <tr>
+        <td><label for="email">Email</label> </td>
+        <td><input type="email" name="email" id="email"></td>
+    </tr>
+    <tr>
+        <td><label for="numbp">Số Điện Thoại</label></td>
+        <td><input type="number" id="numbp" name="numbp"></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td><input type="submit" name="submit" value="Đăng nhập">
+        <input type="reset" name="reset" value="Đăng Nhập Lại"> </td>
+    </tr>
+    </form>
+</table>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>Number: <span id="input"></span></p>
+    <p>Array: <span id="output"></span></p>
+    <script>
+      let numbers = prompt("Number: ");
+      let str = "";
+      for (value of numbers) {
+        str +=
+          value == 1
+            ? "One "
+            : value == 2
+            ? "Two "
+            : value == 3
+            ? "Three "
+            : value == 4
+            ? "Four "
+            : value == 5
+            ? "Five "
+            : value == 6
+            ? "Six "
+            : value == 7
+            ? "Seven "
+            : value == 8
+            ? "Eight "
+            : value == 9
+            ? "Nine "
+            : "Zero ";
+      }
+
+      // Higher - order function
+      // const words = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"];
+      // const str = numbers.split("").map(x => words[x]).join(" ");
+      document.getElementById("input").innerHTML = numbers;
+      document.getElementById("output").innerHTML = str;
+    </script>
+  </body>
+</html>

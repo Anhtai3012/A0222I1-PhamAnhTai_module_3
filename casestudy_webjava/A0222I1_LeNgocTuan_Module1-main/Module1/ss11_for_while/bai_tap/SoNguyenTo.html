@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>hello</title>
+</head>
+<body>
+    <div id="output"></div>
+<script>
+   /* let numbers = parseInt(prompt("number?", ''));        
+    let count = 0;
+    let N = 2;
+    let dem = 0;
+    while (count < numbers) {
+        for (let i = 1; i <= N; i++) {
+            if (N % i == 0) {
+                dem++;
+            }
+        }
+        if (dem == 2) {
+            document.write(N+" ");
+            count++;
+        }
+        N++;
+        dem = 0;
+    }*/ 
+    const isPrime = (numb) => {             //theo thầy trả hàm theo true false
+            if (numb <= 1) return false;
+            if (numb == 2) return true;
+
+            for (let n = 2; n <= Math.sqrt(numb); n++) {
+                if (numb % n == 0) return false;
+            }
+
+            return true;
+        }
+        let numbOfPrime = parseInt(prompt("Count ?", ''));
+        let i = 0;
+        let str = "";
+        while (numbOfPrime > 0) {
+            i++;
+            if (isPrime(i)) {
+                numbOfPrime--;
+                str += `${i}, `
+            }
+        }
+
+        document.querySelector("#output").innerHTML = str;
+</script>
+</body>
+</html>

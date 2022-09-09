@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var rabbit = {};
+        rabbit.speak = function (line) {
+            console.log("The rabbit says '" + line + "'");
+        };
+
+        rabbit.speak("I'm alive.");
+        // => The rabbit says 'I'm alive.'
+        function speak(line) {
+            console.log("The " + this.type + " rabbit says '" + line + "'");
+        }
+        var whiteRabbit = { type: "white", speak: speak };
+        var fatRabbit = { type: "fat", speak: speak };
+
+        whiteRabbit.speak("I'm alive.");
+        // => The white rabbit says 'I'm alive.'
+        fatRabbit.speak("I'm alive.");
+        // => The fat rabbit says 'I'm alive.'
+        var whiteRabbit = { type: "white" };
+        var fatRabbit = { type: "fat" };
+        var sexyRabbit = { type: "sexy" };
+
+        speak.apply(whiteRabbit, ["I'm alive."]);
+        // => The white rabbit says 'I'm alive.'
+
+        speak.call(fatRabbit, "I'm alive.");
+        // => The fat rabbit says 'I'm alive.'
+
+        var sexyRabbitSpeak = speak.bind(sexyRabbit, "I'm alive.");
+        sexyRabbitSpeak();
+        // => The sexy rabbit says 'I'm alive.'
+        function Rabbit(type) {
+            this.type = type;
+            this.greeting = function () {
+                console.log(this.type + " rabbit" + " say Hello!");
+            }
+        }
+
+        var blackRabbit = new Rabbit("black");
+        console.log(blackRabbit.type);
+        // => black
+        blackRabbit.greeting();
+        // => black rabbit say Hello!
+
+        var killerRabbit = new Rabbit("killer");
+        console.log(killerRabbit.type);
+        // => killer
+        killerRabbit.greeting();
+        // => killer rabbit say Hello!
+        function Rabbit(type) {
+            this.type = type;
+            this.greeting = function () {
+                console.log(this.type + " rabbit" + " say Hello!");
+            }
+        }
+
+        Rabbit.prototype.sayBye = function () {
+            console.log(this.type + " rabbit" + " say GoodBye!");
+        }
+
+        var blackRabbit = new Rabbit("black");
+        blackRabbit.sayBye();
+        // => black rabbit say GoodBye!
+        function Rabbit(type) {
+            this.type = type;
+            this.greeting = function () {
+                console.log(this.type + " rabbit" + " say Hello!");
+            }
+        }
+
+        Rabbit.prototype.teeth = "small";
+
+        var blackRabbit = new Rabbit("black");
+        var killerRabbit = new Rabbit("killer");
+
+        console.log(blackRabbit.teeth);   // => small
+        console.log(killerRabbit.teeth);  // => small
+
+        killerRabbit.teeth = "long";
+        console.log(blackRabbit.teeth);   // => small
+        console.log(killerRabbit.teeth);  // => long
+    </script>
+</body>
+
+</html>

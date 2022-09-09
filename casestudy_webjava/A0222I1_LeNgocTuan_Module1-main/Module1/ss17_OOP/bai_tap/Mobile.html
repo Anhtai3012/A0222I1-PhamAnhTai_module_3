@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mobile</title>
+  </head>
+  <body>
+    <div id="nokia"></div>
+    <div id="iphone"></div>
+    <script>
+      class Mobile {
+        constructor(battery) {
+          this.battery = Math.min(battery, 100);
+          this.memorySend = [];
+          this.memoryBox = [];
+          this.currentMessage = "";
+          this.isAvailable = true;
+        }
+        getOn() {
+          if (this.isAvailable) return true;
+        };
+        getOff() {
+          if (!this.isAvailable) return true;
+        };
+        checkStatus() {
+          if (this.getOn() && this.battery > 0) return true;
+          return false;
+        };
+        charge() {
+          this.battery = 100;
+        };
+        typeCurrentMessage(text) {
+          if (this.getOff()) return;
+          this.currentMessage = text;
+          this.battery--;
+        };
+        sendText(mobile) {
+          if (this.getOff()) return;
+          this.memorySend.push("Send: " + this.currentMessage);
+          mobile.memoryBox.push("Receive: " + this.currentMessage);
+          this.currentMessage = "";
+          this.battery--;
+        };
+        receiveMessage(mobile) {
+          if (this.getOff()) return;
+          this.memoryBox(this.currentMessage);
+          mobile.memorySend(this.currentMessage);
+          mobile.currentMessage = "";
+          this.battery--;
+        };
+        showMemoryBox() {
+          if (this.getOff()) return;
+          console.table(this.memoryBox);
+          this.battery--;
+        };
+        showMemorySend() {
+          if (this.getOff()) return;
+          console.table(this.memorySend);
+          this.battery--;
+        };
+      }
+      let nokia = new Mobile(30);
+      let iphone = new Mobile(30);
+      let text = prompt("Message want send to iphone ");
+      nokia.getOn();
+      // nokia send iphone
+      while (nokia.checkStatus()) {
+        nokia.typeCurrentMessage(text);
+        nokia.sendText(iphone);
+      }
+      nokia.showMemorySend();
+      iphone.showMemoryBox();
+      //charge 100
+      nokia.charge();
+      iphone.charge();
+      // iphone send nokia
+      let textbox = prompt("Message want send to nokia");
+      while (iphone.checkStatus()) {
+        iphone.typeCurrentMessage(textbox);
+        iphone.sendText(nokia);
+      }
+      iphone.showMemorySend();
+      nokia.showMemoryBox();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p><input oninput="resultToFoot()" id="meter" placeholder="number"> meter to <span id="output1"></span></p>
+    <p><input oninput="resultToMeter()" id="foot" placeholder="number"> foot to <span id="output2"></span></p>
+    <script>
+
+        let met = document.getElementById("foot");
+
+        function footToMeter(foot) {
+            return 0.305 * foot;
+
+        }
+        function meterToFoot(meter) {
+            return 3.279 * meter;
+    
+        }
+
+        function resultToMeter() {
+            let input1 = document.getElementById("foot").value;
+            document.getElementById("output2").innerHTML = footToMeter(input1) + " meter";
+        }
+
+        function resultToFoot() {
+            let input2 = document.getElementById("meter").value;
+            document.getElementById("output1").innerHTML = meterToFoot(input2) + " foot";
+        }
+
+    </script>
+</body>
+
+</html>

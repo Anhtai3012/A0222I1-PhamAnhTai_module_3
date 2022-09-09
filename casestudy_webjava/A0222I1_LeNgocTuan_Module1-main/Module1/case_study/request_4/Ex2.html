@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>Text you input <span id="input"></span></div>
+    <div>Result <span id="output"></span></div>
+    <script>
+      // let arr1 = (prompt("Input here: "));
+      // let arr = arr1.toLowerCase();
+      // let text = new Set(arr);
+      // let count = text.size;
+
+      function differentString(str) {
+        let arr = [];
+        for (let i = 0; i < str.length; i++) {
+          if (!arr.includes(str.charAt(i))) {
+            arr.push(str.charAt(i));
+          }
+        }
+        return arr.length;
+      }
+      let text = prompt("Input you text: ");
+      console.log(differentString(text));
+      document.getElementById("input").innerHTML = text;
+      document.getElementById("output").innerHTML = differentString(text);
+    </script>
+  </body>
+</html>

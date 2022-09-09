@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <canvas
+      id="canvasCircle"
+      width="400"
+      height="200"
+      style="border: 1px solid #0b0b0b"
+    ></canvas>
+    <script>
+      // Circle
+      const Circle = function (canvas, position, radius, color) {
+        this.canvas = canvas;
+        this.position = position;
+        this.radius = radius;
+        this.color = color;
+        this.draw = function () {
+          canvas.beginPath();
+          canvas.fillStyle = this.color;
+          canvas.arc(
+            this.position.x,
+            this.position.y,
+            this.radius,
+            0,
+            2 * Math.PI
+          ); // toa do x, y, ban kinh, diem bat dau la 0 do, chu vi
+          canvas.fill();
+        };
+      };
+      let canvas1 = document.getElementById("canvasCircle").getContext("2d");
+      let circle = new Circle(canvas1, { x: 150, y: 100 }, 70, "green");
+      circle.draw();
+    </script>
+  </body>
+</html>

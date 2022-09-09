@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>Array 1: <span id="input1"></span></div>
+    <div>Array 2: <span id="input2"></span></div>
+    <div>
+      Result <span id="output"></span> with character: <span id="text"></span>
+    </div>
+    <script>
+      let array1 = prompt("Input Text 1: ");
+      let array2 = prompt("Input Text 2: ");
+      let count = 0;
+      let str = "";
+
+      let char1 = array1.split("");
+      let char2 = array2.split("");
+
+      // function commonCharacterCount(s1, s2) {
+      //   let result = [];
+      //   for (let i = 0; i < s2.length; i++) {
+      //     if (s1.indexOf(s2[i]) >= 0) {
+      //       result.push(s2[i]);
+      //       s1.splice(s1.indexOf(s2[i]), 1);
+      //     }
+      //   }
+      //   return result;
+      // }
+      for (let j = 0; j < char2.length; j++) {
+        if (char1.indexOf(char2[j]) >= 0) {
+          str += `${char2[j]}, `;
+          count++;
+          char1.splice(char1.indexOf(char2[j]), 1);
+        }
+      }
+      document.getElementById("input1").innerHTML = array1;
+      document.getElementById("input2").innerHTML = array2;
+      document.getElementById("output").innerHTML = count;
+      document.getElementById("text").innerHTML = str;
+    </script>
+  </body>
+</html>

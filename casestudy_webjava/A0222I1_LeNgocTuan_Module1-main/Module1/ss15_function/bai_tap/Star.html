@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <button id="nameStar" onclick="nameStar()">Find Star</button>
+    <div id="output"></div>
+    <script>
+      let star1 = [
+        "Polaris",
+        "Aldebaran",
+        "Deneb",
+        "Vega",
+        "Altair",
+        "Dubhe",
+        "Regulus",
+      ];
+      let star2 = [
+        "Ursa Minor",
+        "Taurus",
+        "Cygnus",
+        "Lyra",
+        "Aquila",
+        " Ursa Major",
+        "Leo",
+      ];
+
+      function findStar(name) {
+        return star1.indexOf(name) == -1
+          ? "not found ..."
+          : star2[star1.indexOf(name)];
+      }
+
+      function nameStar() {
+        let name = prompt("Name your star");
+        document.getElementById("output").innerHTML =
+          "Star you find is " + findStar(name);
+      }
+    </script>
+  </body>
+</html>

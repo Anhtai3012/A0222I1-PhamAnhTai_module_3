@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+
+<body>
+    <form name="login">
+        <fieldset>
+            <table>
+                <tr>
+                    <td>ID: <input type="text" name="input1" placeholder="Name" id="input1"></td>
+                    <td>PassWord: <input type="password" name="input2" placeholder="Password" id="input2"> </td>
+                    <td> <input type="button" name=submit value="Submit" id="sub"></td>
+                </tr>
+                <tr>
+                    <td colspan="2"> Results: <span id="output"></span></td>
+                    <td><button id="clear" type="reset">Reset</button></td>
+                </tr>
+            </table>
+        </fieldset>
+    </form>
+    <script>
+        var sub = document.getElementById("sub");
+        var input1 = document.getElementById("input1");
+        var input2 = document.getElementById("input2");
+
+        sub.addEventListener("click", clickFunction);
+
+        function clickFunction() {
+            if (input1.value.toLowerCase() == "Admin".toLowerCase()) {
+                if (input2.value.toLowerCase() == "TheMaster".toLowerCase()) {
+                    document.getElementById("output").innerHTML = "Welcome";
+                    //alert("welcome");
+                }
+                else if (input2.value.toLowerCase() == "null".toLowerCase()) {
+                    document.getElementById("output").innerHTML = "Cancel";
+                }
+                else {
+                    document.getElementById("output").innerHTML = "Wrong Password";
+                }
+            } else if (input1.value.toLowerCase() == "null".toLowerCase()) {
+                document.getElementById("output").innerHTML = "Cancel";
+            } else {
+                document.getElementById("output").innerHTML = "I don't know you";
+            }
+        }
+    </script>
+</body>
+
+</html>

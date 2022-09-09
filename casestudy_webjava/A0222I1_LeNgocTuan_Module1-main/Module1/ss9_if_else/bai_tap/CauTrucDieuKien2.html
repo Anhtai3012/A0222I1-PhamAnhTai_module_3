@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Cấu Trúc Điều Kiện 2</title>
+</head>
+
+<body>
+    <h2> Chuyển nhiệt độ từ độ C sang độ F</h2>
+    <p> Chuyển từ <sup>0</sup>C sang độ F. Nhập độ C = <input type="number" id="input1" name="input1"></p>  
+    <p> Độ F là <span id="output1"></span></p>
+    <hr>
+    <h2> Chuyển từ mét sang feet </h2>
+    <p> Chuyển met sang feet. Nhập số met: <input id="input2" type="number" name="input2"></p>
+    <p> Feet = <span id="output2"></span></p>
+    <hr>
+    <h2> Giải phương trình bậc 2.</h2>
+    <p> Nhập a <input type="number" name="input3" id="input3">
+        Nhập b <input type="number" name="input4" id="input4">
+        Nhập c <input type="number" name="input5" id="input5">
+        <button id="findx">Find X</button>
+    </p>
+    <p> Vậy <span id="output3"></span> </p>
+    <hr>
+    <h2>Kiểm tra tuổi </h2>
+    <p> Nhập tuổi 1 người <input type="number" name="input6" id="input6"></p>
+    <p> <span id="output4"></span></p>
+    <hr>
+    <h2> Kiểm tra đúng là 3 cạnh của 1 tam giác không </h2>
+    <p> Nhập cạnh 1 <input id="input7" name="input7" type="number"></p>
+    <p> Nhập cạnh 2 <input id="input8" name="input8" type="number"></p>
+    <p> Nhập cạnh 3 <input id="input9" name="input9" type="number"></p>
+    <p> <span id="output5"></span></p>
+    <hr>
+    
+
+    <script>
+        var input1 = document.getElementById("input1");
+        var input2 = document.getElementById("input2");
+        var findx = document.getElementById("findx");
+        var input6 = document.getElementById("input6");
+        var input9 = document.getElementById("input9");
+
+        input1.addEventListener("keyup", cFunction);
+        input2.addEventListener("keyup", fFunction);
+        findx.addEventListener("click", xFunction);
+        input6.addEventListener("keyup", ageFunction);
+        input9.addEventListener("keyup", triangleFunction);
+
+        function cFunction() { //tính độ F
+            let far = (parseInt(input1.value) * 9 / 5) + 32;
+            document.getElementById("output1").innerHTML = far;
+        }
+        function fFunction() { //tính độ feet
+            let feet = (parseInt(input2.value)) * 3.2808;
+            document.getElementById("output2").innerHTML = feet;
+        }
+        function xFunction() { // toán tử 3 ngôi, switch case giải phương trình bậc 2
+            let a = parseInt(document.getElementById("input3").value);
+            let b = parseInt(document.getElementById("input4").value);
+            let c = parseInt(document.getElementById("input5").value);
+            let delta = (b * b) - (4 * a * c);
+            let d = (delta < 0) ? "zero" : (delta > 0) ? "double" : "single";
+            switch (d) {
+                case "zero":
+                    document.getElementById("output3").innerHTML = " phương trình vô nghiệm";
+                    break;
+                case "single":
+                    let x0 = (-b) / (2 * a);
+                    document.getElementById("output3").innerHTML = " phương trình có nghiêm kép là " + x0;
+                    break;
+                case "double":
+                    let sqrtd = Math.sqrt(delta);
+                    let x1 = (-b + sqrtd) / (2 * a);
+                    let x2 = (-b - sqrtd) / (2 * a);
+                    document.getElementById("output3").innerHTML = " phương trình có 2 nghiệm là " + x1 + " và " + x2;
+            }
+        } 
+        function ageFunction() { // toán && tính tuổi
+            let age = parseInt(input6.value);
+            if (age > 0 && age < 120) {
+                document.getElementById("output4").innerHTML = "Your age is " + age;
+            }
+            else {
+                document.getElementById("output4").innerHTML = "Wrong Age";
+            }
+        }
+        function triangleFunction() { // sử dụng if else chồng nhau; tìm tam giác
+            let a = parseInt(document.getElementById("input7").value);
+            let b = parseInt(document.getElementById("input8").value);
+            let c = parseInt(input9.value);
+            if (a > 0 && b > 0 && c > 0) {
+                if (a + b > c) {
+                    if (b + c > a) {
+                        if (a + c > b) {
+                            document.getElementById("output5").innerHTML = "Đây là tam giác với 3 cạnh có giá trị lần lượt là " + a + ", " + b + ", " + c;
+                        } else {
+                            document.getElementById("output5").innerHTML = "Wrong Triangle"
+                        }
+                    } else {
+                        document.getElementById("output5").innerHTML = "Wrong Triangle"
+                    }
+                } else {
+                    document.getElementById("output5").innerHTML = "Wrong Triangle"
+                }
+            }
+        }
+        
+    </script>
+</body>
+
+</html>

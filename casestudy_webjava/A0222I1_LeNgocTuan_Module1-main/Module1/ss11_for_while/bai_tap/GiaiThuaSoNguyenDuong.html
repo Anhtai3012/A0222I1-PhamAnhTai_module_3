@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Giai Thua</title>
+</head>
+
+<body>
+    <p> Nhập số nguyên dương tính muốn tính giao thừa n: <input type="number" id="input1"></p>
+    <p> <button id="output1">Giai Thừa n!</button></p>
+    <script>
+
+        var input1 = document.getElementById("input1");
+        var output1 = document.getElementById("output1");
+
+        output1.addEventListener("click", facFunction);
+
+        function facFunction() {
+            var factorials = 1;
+            var a = parseInt(input1.value);
+            for (i = 1; i <= a ; i++) {
+                factorials *= i;
+                console.log(factorials);
+            }
+            alert(factorials);
+        }
+
+    </script>
+</body>
+
+</html>

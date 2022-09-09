@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>ss5_inheritance.bai_tap.point.Point3D</OriginalElement>
+  <nodes>
+    <node x="0.0" y="364.0">ss5_inheritance.bai_tap.point.Point3D</node>
+    <node x="25.0" y="0.0">ss5_inheritance.bai_tap.point.Point2D</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="ss5_inheritance.bai_tap.point.Point3D" target="ss5_inheritance.bai_tap.point.Point2D">
+      <point x="0.0" y="-124.0" />
+      <point x="0.0" y="157.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="52.0" y="300.5" />
+  <SelectedNodes>
+    <node>ss5_inheritance.bai_tap.point.Point3D</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Constructors</Category>
+    <Category>Methods</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Fibonacci</title>
+</head>
+
+<body>
+    <p> 20 số đầu tiên của dãy Fibonacci là <span id="output1"></span></p>
+    <hr>
+    <p> Số đầu tiên trong dãy Fibonacci chia hết cho 5 là <span id="output2"></span></p>
+    <hr>
+    <p> Tổng 20 số đầu của dãy Fibonacci là <span id="output3"></span></p>
+    <script>
+        let a = 1; // lập 20 chữ số đầu của dãy fibo
+        let b = 1;
+        let output1 = "";
+        for (i = 1; i <= 20; i++) {
+            if (i == 1 || i == 2) {
+                output1 += "1; ";
+                a = 1;
+                b = 1;
+                continue;
+            }
+            let c = a + b;
+            output1 += `${c}; `;
+            a = b;
+            b = c;
+        }
+        document.getElementById("output1").innerHTML = output1;// lập 20 chữ số đầu của dãy fibo
+
+        let num1 = 1;   // số đầu tiên dãy fibo chia hết cho 5
+        let num2 = 1;
+        let num3;
+        do {
+            num3 = num1 + num2;
+            num1 = num2;
+            num2 = num3;
+            console.log(num3);
+        } while ((num3) % 5 != 0);
+        document.getElementById("output2").innerHTML = num3;    // số đầu tiên dãy fibo chia hết cho 5
+
+        let x = 1;     //tổng 20 số đầu tiên của dãy fibo
+        let y = 1;
+        let sum = 0;
+        let z;
+        for (j = 1; j <= 20; j++) {
+            if (j == 1 || j == 2) {
+                x = 1;
+                y = 1;
+                sum = x + y;
+                continue;
+            }
+            z = x + y;
+            sum += z;
+            x = y;
+            y = z;
+            console.log(sum);
+        }
+        document.getElementById("output3").innerHTML = sum;
+    </script>
+</body>
+
+</html>

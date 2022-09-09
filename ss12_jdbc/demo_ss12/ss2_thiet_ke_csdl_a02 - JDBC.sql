@@ -1,5 +1,5 @@
-create database if not exists a0222i1;
-use a0222i1;
+create database if not exists demo_ss12;
+use demo_ss12;
 create table class_type(
 id int primary key auto_increment,
 `name` varchar(50)

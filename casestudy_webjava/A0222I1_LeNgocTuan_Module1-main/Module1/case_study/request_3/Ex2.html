@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const numbers1 = [7, 2, 5, 3, 5, 3];
+      const numbers2 = [7, 2, 5, 1, 1, 4, 6, 3, 5, 3];
+      let checkArray = [];
+
+      // dung set
+      //   function checkNumber() {
+      //     const result = new Set(numbers2.filter(x => !numbers1.includes(x)));   // dung set thi return [...]
+      //     return [...result];
+      //   }
+      
+      // dung includes
+      function checkNumber() {
+        for (value of numbers2) {
+          if (!numbers1.includes(value) && !(checkArray.includes(value))) {
+            checkArray.push(value);
+          };
+        };
+        return checkArray;
+      }
+      document.write(`Missing ${checkNumber()}`);
+    </script>
+  </body>
+</html>

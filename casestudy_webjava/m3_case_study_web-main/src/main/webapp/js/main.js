@@ -1,1 +1,0 @@
-document.querySelector("main").style.height= window.innerHeight - 150 + "px";

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p> <button onclick="inputArray1()">Array 1 </button><span id="array1"></span></p>
+    <p> <button onclick="inputArray2()">Array 2 </button><span id="array2"></span></p>
+    <p> <button onclick="check()">Check</button></p>
+    <script>
+        let array1 = new Array();
+        let array2 = new Array();
+        const MAX = 6;
+        let count = 0;
+
+        function inputArray1() {
+            for (i = 0; i < MAX; i++) {
+                array1[i] = prompt("Element Array 1");
+            }
+            document.getElementById("array1").innerHTML = array1;
+        }
+
+        function inputArray2() {
+            for (i = 0; i < MAX; i++) {
+                array2[i] = prompt("Element Array 2");
+            }
+            document.getElementById("array2").innerHTML = array2;
+        }
+
+        function check() {
+           for (i = 0; i < MAX; i++) {
+                for (j = 0; j < MAX; j++) {
+                    if (array1[i] === array2[j]) {
+                        count++;
+                        break;
+                    }
+                }
+            } 
+            
+            if (count == MAX) {
+                alert("2 Array is same");
+            } else {
+                alert("Not same");
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+header {
+    background-color: dodgerblue;
+    padding: 30px;
+    text-align: center;
+    font-size: 35px;
+    color: white;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 45%;
+    clear: both;
+    background-color: azure;
+    text-align: center;
+}
+
+nav {
+    float: left;
+    width: 70%;
+    height: 300px;
+    background: white;
+    padding: 20px;
+}
+
+.form {
+    position: relative;
+    left: 40%;
+}
+
+.data {
+    height: 75px;
+}
+
+span {
+    color: green;
+    font-size: 30px;
+}
+
+.user-info-delete {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

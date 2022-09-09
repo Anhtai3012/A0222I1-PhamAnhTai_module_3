@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <p> dãy số là <span id="list-numbs"></span></p>
+    <button onclick="showListNumbGreaterTo10()">Check > 10</button>
+    <p> lớn hơn 10 là <span id="list-numbs-greater-10"></span></p>
+    <p> <button onclick="maxArray()">Max in Array</button></p>
+    <p> Max in Array is <span id="max-numb"></span></p>
+    <p> <button onclick="averageArray()">Average</button></p>
+    <p> Average is <span id="average-array"></span></p>
+
+    <script>
+        let array = new Array();
+        const MAX = 10;
+
+        for (let i = 0; i < MAX; i++) {
+            array[i] = parseInt(prompt("insert element"));
+            document.getElementById("list-numbs").innerHTML += array[i] + ", ";
+        }
+
+        function showListNumbGreaterTo10() {
+            let result = "";
+            for (let i = 0; i < MAX; i++) {
+                if (array[i] > 10) {
+                    result += array[i] + ", ";
+                }
+            }
+            document.getElementById("list-numbs-greater-10").innerHTML = result;
+        }
+
+        function maxArray() {
+            let max = array[0];
+            let idx = 0;
+            for (let i = 0; i < MAX; i++) {
+                if (max < array[i]) {
+                    idx = i;
+                    max = array[i];
+                }
+            }
+            document.getElementById("max-numb").innerHTML = `${max} index is  ${idx}`;
+        }
+        function averageArray() {
+            let sumArray = 0;
+            for (let numb of array) {
+                sumArray += numb
+            } 
+            let aveArray = (sumArray) / MAX;
+            document.getElementById("average-array").innerHTML = aveArray;
+        }
+
+    </script>
+</body>
+
+</html>

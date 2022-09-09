@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Puzzle Game</title>
+</head>
+
+<body>
+    <h2>Kiểm tra số a có chia hết cho b không</h2>
+    <p> Input a <input type="number" name="input1" id="input1"></p>
+    <p> Input b <input type="number" name="input2" id="input2"></p>
+    <p> Result <span id="output"></span></p>
+    <hr>
+    <h2> Kiểm tra đủ vào lớp 10 không </h2>
+    <p> nhập năm sinh của bạn <input type="number" name="input3" id="input3"></p>
+    <button id="check">test 10</button>
+    <hr>
+    <h2> Số bạn nhập âm hay dương </h2>
+    <p> Nhập số nguyên bạn muốn <input type="number" name="input4" id="input4"></p>
+    <p> Số bạn nhập là <span id="output1"></span></p>
+    <hr>
+    <h2> Kiểm tra số lớn nhất </h2>
+    <p> Nhập 3 số nguyên bất kì. a = <input type="number" name="input5" id="input5">
+        b = <input type="number" name="input6" id="input6">
+        c = <input type="number" name="input7" id="input7"></p>
+    <p> Số lớn nhất là <span id="output2"></span></p>
+    <hr>
+
+    <script>
+        var check = document.getElementById("check");
+        var input4 = document.getElementById("input4");
+        var input7 = document.getElementById("input7");
+
+        input2.addEventListener("keyup", resultFunction);
+        check.addEventListener("click", yearFunction);
+        input4.addEventListener("keyup", integerFunction);
+        input7.addEventListener("keyup", maxFunction);
+
+
+        function resultFunction() {
+            let a = parseInt(document.getElementById("input1").value);
+            let b = parseInt(document.getElementById("input2").value);
+            if (a % b == 0) {
+                document.getElementById("output").innerHTML = "Chia hết";
+            } else {
+                document.getElementById("output").innerHTML = "Không chia hết";
+            }
+        }
+        function yearFunction() {
+            let a = parseInt(document.getElementById("input3").value);
+            let year = 2022 - a;
+            if (year > 15) {
+                alert(" Đủ điều kiện lớp 10")
+            }
+        }
+        function integerFunction() {
+            let a = parseInt(input4.value);
+            if (a > 0) {
+                document.getElementById("output1").innerHTML = "Dương";
+            }
+            else if (a < 0) {
+                document.getElementById("output1").innerHTML = "Âm";
+            }
+            else {
+                document.getElementById("output1").innerHTML = 0;
+            }
+        }
+        function maxFunction() {
+            let a = parseInt(document.getElementById("input5").value);
+            let b = parseInt(document.getElementById("input6").value);
+            let c = parseInt(input7.value);
+            if (a > b && a > c) {
+                document.getElementById("output2").innerHTML = "a";
+            } else if (b > a && b > c) {
+                document.getElementById("output2").innerHTML = "b";
+            } else {
+                document.getElementById("output2").innerHTML = "c";
+            }
+        }
+    </script>
+</body>
+
+</html>

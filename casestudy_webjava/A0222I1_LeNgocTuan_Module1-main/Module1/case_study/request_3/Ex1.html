@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>Array 1: <span id="array1"></span></div>
+    <div>Array 2: <span id="array2"></span></div>
+    <script>
+      const MAX = parseInt(prompt("Input length: "));
+      let number1 = new Array(MAX);
+      for (let i = 0; i < MAX; i++) {
+        number1[i] = parseInt(prompt("Input element of number1: "));
+      }
+      document.getElementById("array1").innerHTML = number1;
+
+      //Higher-Order Functions
+      //   function sumArray(array1) {
+      //     const newArr = array1.reduce((arr, item) => {
+      //       const len = arr.length;
+      //       arr.push(item + (arr[len - 1] || 0));
+      //       return arr;
+      //     }, []);
+      //     return newArr;
+      //   }
+
+      // Recursion Function
+      // function sumArray(sourceArr, newArr = []) {
+      //   const N1 = sourceArr.length;
+      //   const N2 = newArr.length;
+      //   if (N2 == N1) return newArr;
+      //   newArr.push(sourceArr[N2] + (newArr[N2 - 1] || 0));
+      //   return sumArray(sourceArr, newArr);
+      // }
+
+
+      // Function 
+      function sumArray(number1,number2 = []) {
+        for (let i = 0; i < MAX; i++) {
+          if ((i == 0)) {
+            number2.push(number1[0]);
+          } else {
+            number2.push(number1[i] + number2[i-1]);
+          }
+        }
+        return number2;
+      }
+      document.getElementById("array2").innerHTML = sumArray(number1);
+    </script>
+  </body>
+</html>

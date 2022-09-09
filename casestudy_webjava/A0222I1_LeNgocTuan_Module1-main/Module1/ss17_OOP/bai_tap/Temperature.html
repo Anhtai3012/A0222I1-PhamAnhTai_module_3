@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Temperature</title>
+  </head>
+
+  <body>
+    <div>Celsius To Kelvin <span id="celsiusToKelvin"></span></div>
+    <div>Celsius To Fahrenheit <span id="celsiusToFar"></span></div>
+    <script>
+      class TemperatureCelsius {
+        constructor(temperature) {
+        this.temperature = Math.max(temperature, -273);
+        }
+        getConverterFar() {
+          return (9 / 5) * this.temperature + 32;
+        };
+        getConverterKelvin() {
+          return this.temperature + 273;
+        };
+      };
+      let temperature = parseInt(prompt("Input: "));
+      let converter = new TemperatureCelsius(temperature);
+      document.getElementById("celsiusToKelvin").innerHTML = converter.getConverterKelvin();
+      document.getElementById("celsiusToFar").innerHTML = converter.getConverterFar();
+    </script>
+  </body>
+</html>
