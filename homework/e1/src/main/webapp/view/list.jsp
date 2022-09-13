@@ -28,7 +28,7 @@
         <th>Price</th>
         <th>Color</th>
         <th>Quantity</th>
-        <th>Category_id</th>
+        <th>Category</th>
         <th>Action</th>
     </tr>
     <c:forEach var="product" items="${list}">

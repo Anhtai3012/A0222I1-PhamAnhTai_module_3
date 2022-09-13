@@ -28,7 +28,7 @@
     <tr>
         <th>
             <label >ID</label>
-            <input type="hidden" name="id" value="${houseHold.getId()}">
+            <input disabled name="id" value="${houseHold.getId()}">
         </th>
     </tr>
     <tr>
@@ -40,7 +40,7 @@
     <tr>
         <th>
             <label >Quantity:</label>
-            <input type="text" name="quantity" value="${houseHold.getQuantity()}" size="35">
+            <input type="text" disabled name="quantity" value="${houseHold.getQuantity()}" size="35">
         </th>
     </tr>
     <tr>

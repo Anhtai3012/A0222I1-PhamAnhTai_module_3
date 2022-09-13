@@ -34,11 +34,19 @@ public class CustomerServlet extends HttpServlet {
         String action = Optional.ofNullable(request.getParameter("action")).orElse("");
         switch (action) {
             case "insertCustomer": {
-                insertCustomer(request, response);
+                try {
+                    insertCustomer(request, response);
+                } catch (SQLException throwables) {
+                    throwables.printStackTrace();
+                }
                 break;
             }
             case "updateCustomer": {
-                updateCustomer(request, response);
+                try {
+                    updateCustomer(request, response);
+                } catch (SQLException throwables) {
+                    throwables.printStackTrace();
+                }
                 break;
             }
         }

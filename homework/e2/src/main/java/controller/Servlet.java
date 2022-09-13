@@ -59,22 +59,26 @@ public class Servlet extends HttpServlet {
     private void addHousehold(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         int id= Integer.parseInt(request.getParameter("id"));
         String name = request.getParameter("name");
-        Map<String,String> listError = new HashMap<>();
-        if(name.isEmpty()){
-            listError.put("name", "name abc");
-            System.out.println(listError.get("name"));
-            request.setAttribute("listError", listError);
-            request.getRequestDispatcher("/view/create.jsp").forward(request,response);
-        }
+//        Map<String,String> listError = new HashMap<>();
+//        if(name.isEmpty()){
+//            listError.put("name", "name abc");
+//            System.out.println(listError.get("name"));
+//            request.setAttribute("listError", listError);
+//            request.getRequestDispatcher("/view/create.jsp").forward(request,response);
+//        }
         int quantity = Integer.parseInt(request.getParameter("quantity"));
         String date = request.getParameter("date");
         String address = request.getParameter("address");
         HouseHold houseHold = new HouseHold(id,name,quantity,date,address);
-        this.service.insertHousehold(houseHold);
-        request.setAttribute("messenger","successful");
+        Map<String,String> listError = this.service.insertHousehold(houseHold);
+        String message ="successful";
+        if (!listError.isEmpty()){
+            message= "not successful";
+            request.setAttribute("listError",listError);
+        }
+        request.setAttribute("messenger",message);
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("view/create.jsp");
         requestDispatcher.forward(request,response);
-
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -92,10 +96,20 @@ public class Servlet extends HttpServlet {
             case"view":
                 showViewHousehold(request,response);
                 break;
+            case "search":
+                showSearchName(request,response);
+                break;
             default:
                 showListHousehold(request,response);
                 break;
         }
+    }
+
+    private void showSearchName(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String name = request.getParameter("search");
+        request.setAttribute("list",this.service.selectByName(name));
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("view/list.jsp");
+        requestDispatcher.forward(request,response);
     }
 
     private void showViewHousehold(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -123,6 +137,7 @@ public class Servlet extends HttpServlet {
 
     private void showListHousehold(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setAttribute("list",service.selectAll());
+        request.setAttribute("member",this.memberService.selectAll());
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("view/list.jsp");
         requestDispatcher.forward(request,response);
     }

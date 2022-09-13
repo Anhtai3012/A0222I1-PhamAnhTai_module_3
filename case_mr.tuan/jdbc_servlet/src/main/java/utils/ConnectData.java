@@ -10,39 +10,18 @@ import java.io.IOException;
 import java.sql.*;
 
 public class ConnectData {
+    private static final String URL ="jdbc:mysql://localhost:3306/crud_servlet"; // sửa lại tên của csdl
+    private static final String USER ="root";// mặc định của mysql
+    private static final String PASS ="30122002";// do cài đặt khi cài đặt mysql
     public static Connection getConnect() {
-        String port = "jdbc:mysql://127.0.0.1/crud_servlet";
         Connection connection = null;
-        String username = "";
-        String password = "";
-        boolean flag = true;
-        String path = "D:\\CODEGYM\\user.txt";
-
-
-        try (BufferedReader reader = new BufferedReader(new FileReader(path))) {
-            String line;
-            while ((line = reader.readLine()) != null) {
-                if (flag) {
-                    username = line;
-                    flag = false;
-                }
-                password = line;
-            }
-        } catch (IOException e) {
-            System.out.println(e.getMessage());
-        }
-
         try {
-            Class.forName("com.mysql.jdbc.Driver");
-            connection = DriverManager.getConnection(port, username, password);
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            connection= DriverManager.getConnection(URL,USER,PASS);
         } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
         }
         return connection;
     }
-
-
-
-
 
 }

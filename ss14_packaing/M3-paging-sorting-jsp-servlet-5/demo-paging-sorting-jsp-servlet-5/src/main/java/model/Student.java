@@ -1,4 +1,4 @@
-package model;
+dpackage model;
 
 public class Student {
     private Integer id;

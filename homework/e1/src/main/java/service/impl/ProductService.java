@@ -82,10 +82,9 @@ public class ProductService implements IProduct {
         for (Product p: SelectAll()) {
             if (p.getName().contains(name)){
                 result.add(p);
-                return result;
             }
         }
-        return null;
+        return result;
     }
 
     @Override

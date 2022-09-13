@@ -29,26 +29,38 @@
         <table border="1" style="border-radius: 10px">
             <tr>
                 <th>ID</th>
-                <td><input type="text" name="id" size="35"></td>
+                <td>
+                    <input type="text" name="id" size="35" required>
+                    <p id="errorId" style="display: none;color: red"></p>
+                </td>
             </tr>
             <tr>
                 <th>NAME</th>
                 <td>
-                    <input type="text" id="name" name="name" size="35">
-                    <p id="errorName" style="color: red;display: none ">Name is not empty</p>
+                    <input type="text" name="name" size="35">
+                    <p id="errorName" style="color: red; display: none"></p>
                 </td>
             </tr>
             <tr>
-                <th>Quantity</th>
-                <td><input type="text" name="quantity" size="35"></td>
+                <th aria-disabled="true">Quantity</th>
+                <td>
+                    <input type="text" name="quantity" size="35" required>
+                    <p id="errorQuantity" style="color: red ; display: none"></p>
+                </td>
             </tr>
             <tr>
                 <th>Start day household</th>
-                <td><input type="text" name="date" size="35"></td>
+                <td>
+                    <input type="text" name="date" size="35">
+                    <p id="errorDate" style="color: red;display: none"></p>
+                </td>
             </tr>
             <tr>
                 <th>Address</th>
-                <td><input type="text" name="address" size="35"></td>
+                <td>
+                    <input type="text" name="address" size="35">
+                    <p id="errorAddress" style="color: red;display: none"></p>
+                </td>
             </tr>
             <tr>
                 <th><button type="submit">Add</button></th>
@@ -59,12 +71,29 @@
 
 
 <script>
-    <c:if test="${listError.size() >0}">
+    // pattern="^\\d{3}%" validate tren input
+    <c:if test="${listError.size()>0}">
+    if(${listError.get('id') != null}){
+        document.getElementById("errorId").style.display ="block";
+        document.getElementById("errorId").innerText ="${listError.get('id')}";
+    }
+
+    <%--alert("${listError.get('name')}");--%>
+    if(${listError.get('name') != null}){
     document.getElementById('errorName').style.display = "block";
-  <%--//  alert('${listError.get('name')}');--%>
-    document.getElementById('errorName').innerHTML = '${listError.get('name')}';
+    document.getElementById('errorName').innerText = "${listError.get('name')}";
+    }
+
+    document.getElementById("errorQuantity").style.display="block";
+    document.getElementById("errorQuantity").innerHTML ='${listError.get('quantity')}';
+
+    document.getElementById("errorDate").style.display="block";
+    document.getElementById("errorDate").innerHTML="${listError.get("date")}";
+
+    document.getElementById("errorAddress").style.display="block";
+    document.getElementById("errorAddress").innerHTML="${listError.get('address')}";
     </c:if>
-    function validRoom(event) {
+    function validRoom(event){
         // let hasError = false;
         // const name = document.getElementById('name').value;
         // if(name === ''){

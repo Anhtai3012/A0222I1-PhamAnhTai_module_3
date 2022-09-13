@@ -5,6 +5,7 @@ import lombok.*;
 import java.sql.Timestamp;
 
 
+
 public class Contract {
     int id;
     Timestamp start_day;
@@ -24,6 +25,9 @@ public class Contract {
         this.service_id = service_id;
     }
 
+    public Contract() {
+    }
+
     public Contract(int id, Timestamp start_day, Timestamp end_day, double deposit, int employee_id, int customer_id, int service_id, double total_money) {
         this.id = id;
         this.start_day = start_day;
@@ -33,9 +37,6 @@ public class Contract {
         this.customer_id = customer_id;
         this.service_id = service_id;
         this.total_money = total_money;
-    }
-
-    public Contract() {
     }
 
     public int getId() {

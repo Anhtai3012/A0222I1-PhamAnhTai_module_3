@@ -9,4 +9,5 @@ public interface IHouseHoldRepository {
     void insertHousehold(HouseHold houseHold);
     HouseHold selectById(int id);
     boolean updateHousehold(HouseHold houseHold);
+    List<HouseHold> selectByName(String name);
 }

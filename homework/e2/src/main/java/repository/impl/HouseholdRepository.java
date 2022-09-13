@@ -13,12 +13,14 @@ public class HouseholdRepository implements IHouseHoldRepository {
     private final static String INSERT_HOUSEHOLD="INSERT INTO house_hold (`id`, `name`, `quantity`, `start_day_house_hold`, `address`) VALUES (?,?,?,?,?);";
     private final static String SELECT_BY_ID="select * from house_hold where id =?;";
     private final static String UPDATE_BY_ID="update house_hold set `name`=?,quantity=?,start_day_house_hold=?,address=? where id=?;";
+    private final static String SELECT_BY_NAME="select * from house_hold where `name` regexp ?;";
+    private final static String SElECT_ALL_JOIN="select h.id,h.`name`,count(h.id) quantity,h.start_day_house_hold,h.address from `member` m  right JOIN house_hold h on m.house_hold_id=h.id group by h.id;";
     @Override
     public List<HouseHold> selectAll() {
         List<HouseHold> list = new ArrayList<>();
         Connection connection = BaseRepository.getConnectDB();
         try {
-            PreparedStatement preparedStatement = connection.prepareStatement(SELECT_ALL);
+            PreparedStatement preparedStatement = connection.prepareStatement(SElECT_ALL_JOIN);
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()){
                 int id = resultSet.getInt("id");
@@ -89,5 +91,27 @@ public class HouseholdRepository implements IHouseHoldRepository {
             throwables.printStackTrace();
         }
         return rowUpdate;
+    }
+
+    @Override
+    public List<HouseHold> selectByName(String name) {
+        List<HouseHold> result= new ArrayList<>();
+            Connection connection = BaseRepository.getConnectDB();
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(SELECT_BY_NAME);
+            preparedStatement.setString(1,name);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()){
+                int id= resultSet.getInt("id");
+                String nameHouse = resultSet.getString("name");
+                int quantity = resultSet.getInt("quantity");
+                String date = resultSet.getString("start_day_house_hold");
+                String address = resultSet.getString("address");
+                result.add(new HouseHold(id,nameHouse,quantity,date,address));
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return result;
     }
 }
